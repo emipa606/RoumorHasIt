@@ -1,0 +1,31 @@
+<Patch>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThoughtDef[defName = "AnnoyingVoice"]/workerClass</xpath>
+		<value>
+			<workerClass>Rumor_Code.ThoughtWorker_AnnoyingVoice</workerClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThoughtDef[defName = "CreepyBreathing"]/workerClass</xpath>
+		<value>
+			<workerClass>Rumor_Code.ThoughtWorker_CreepyBreathing</workerClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThoughtDef[defName = "Disfigured"]/workerClass</xpath>
+		<value>
+			<workerClass>Rumor_Code.ThoughtWorker_Disfigured</workerClass>
+		</value>
+	</Operation>
+
+	<Operation Class="PatchOperationReplace">
+		<xpath>*/ThoughtDef[defName = "Ugly"]/workerClass</xpath>
+		<value>
+			<workerClass>Rumor_Code.ThoughtWorker_Ugly</workerClass>
+		</value>
+	</Operation>
+
+</Patch>

@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<LanguageData>
+
+	<RUMOR.RumorHasIt>Rainbeau's Rumor Has It</RUMOR.RumorHasIt>
+	
+	<RUMOR.AllowBrawls>Allow Brawls to Break Out in the Colony.</RUMOR.AllowBrawls>
+	<RUMOR.AllowDefections>Allow Isolated Colonists to Defect to Another Faction.</RUMOR.AllowDefections>
+	<RUMOR.AllowSplinters>Allow Splinter Colonies to Form.</RUMOR.AllowSplinters>
+	
+	<RUMOR.CliquesFormed>The following hostile cliques have formed in your colonies: </RUMOR.CliquesFormed>
+	<RUMOR.CliquesExtraWarning>If things deteriorate any further, a number of colonists may break off to form a new faction.</RUMOR.CliquesExtraWarning>
+	<RUMOR.Cliques>Cliques</RUMOR.Cliques>
+	
+	<RUMOR.DefectionRiskMsg>The following colonists are so socially isolated they are considering defection: </RUMOR.DefectionRiskMsg>
+	<RUMOR.SocialIsolationMsg>The following colonists are extremely socially isolated, and will suffer from additional mental breaks: </RUMOR.SocialIsolationMsg>
+	<RUMOR.DefectionRisk>Defection Risk</RUMOR.DefectionRisk>
+	<RUMOR.SocialIsolation>Social Isolation</RUMOR.SocialIsolation>
+	<RUMOR.DefectedToString> has defected to </RUMOR.DefectedToString>
+	<RUMOR.DueToIsolationString> due to social isolation.</RUMOR.DueToIsolationString>
+	<RUMOR.Defection>Defection</RUMOR.Defection>
+	
+	<RUMOR.SplitMsg>The following colonists have split to form the new faction {0}:</RUMOR.SplitMsg>
+	<RUMOR.Split>Split</RUMOR.Split>
+
+	<RUMOR.BrawlMsg>The following colonists have started an angry brawl with the rest of the colony:</RUMOR.BrawlMsg>
+	<RUMOR.Brawl>Brawl</RUMOR.Brawl>
+	
+	<RUMOR.QuarrelMsg>{0} and {1} have fallen out over a disagreement.</RUMOR.QuarrelMsg>
+	<RUMOR.Quarrel>Quarrel</RUMOR.Quarrel>
+
+</LanguageData>

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<ThoughtDef>
+		<defName>TrustworthyVsGossip</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>Rumor_Code.ThoughtWorker_TrustworthyVsGossip</workerClass>
+		<stages>
+			<li>
+				<label>trustworthy vs gossip</label>
+				<baseOpinionOffset>-8</baseOpinionOffset> 
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>DividedColony</defName>
+		<workerClass>Rumor_Code.ThoughtWorker_DividedColony</workerClass>
+		<stages>
+			<li>
+				<label>divided colony</label>
+				<description>This stupid feud is damaging the colony!</description>
+				<baseMoodEffect>-8</baseMoodEffect>  
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>EveryoneGetsOn</defName>
+		<workerClass>Rumor_Code.ThoughtWorker_EveryoneGetsOn</workerClass>
+		<stages>
+			<li>
+				<label>good relationships</label>
+				<description>All my relationships here are positive and constructive.</description>
+				<baseMoodEffect>3</baseMoodEffect>  
+			</li>
+			<li>
+				<label>great relationships</label> 
+				<description>I couldn't imagine a better group of people to be with!</description>
+				<baseMoodEffect>5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>EveryoneHatesMeColony</defName>
+		<workerClass>Rumor_Code.ThoughtWorker_EveryoneHatesMeColony</workerClass>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>I don't have a single friend in this colony.</label>
+				<description>No one here likes me!</description>
+				<baseMoodEffect>-8</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>EveryoneHatesMeCaravan</defName>
+		<workerClass>Rumor_Code.ThoughtWorker_EveryoneHatesMeCaravan</workerClass>
+		<nullifyingTraits>
+			<li>Psychopath</li>
+		</nullifyingTraits>
+		<stages>
+			<li>
+				<label>Everyone in the caravan hates me!</label>
+				<description>No one here likes me!</description>
+				<baseMoodEffect>-5</baseMoodEffect>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>RunAwayThought</defName>
+		<workerClass>Rumor_Code.ThoughtWorker_RunAway</workerClass>
+		<stages>
+			<li>
+				<label>Defecting to another faction.</label>
+			</li>
+		</stages>
+	</ThoughtDef>
+ 
+	<ThoughtDef>
+		<defName>AnnoyingVoiceAmeliorated</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>Rumor_Code.ThoughtWorker_AnnoyingVoiceAmeliorated</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>annoying voice</label>
+				<baseOpinionOffset>-5</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+	<ThoughtDef>
+		<defName>CreepyBreathingAmeliorated</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>Rumor_Code.ThoughtWorker_CreepyBreathingAmeliorated</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>creepy breathing</label>
+				<baseOpinionOffset>-5</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+ 
+	<ThoughtDef>
+		<defName>DisfiguredAmeliorated</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>Rumor_Code.ThoughtWorker_DisfiguredAmeliorated</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>disfigured</label>
+				<baseOpinionOffset>5</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+  
+	<ThoughtDef>
+		<defName>UglyAmeliorated</defName>
+		<thoughtClass>Thought_SituationalSocial</thoughtClass>
+		<workerClass>Rumor_Code.ThoughtWorker_UglyAmeliorated</workerClass>
+		<validWhileDespawned>true</validWhileDespawned>
+		<stages>
+			<li>
+				<label>ugly</label>
+				<baseOpinionOffset>-5</baseOpinionOffset>
+			</li>
+			<li>
+				<label>staggeringly ugly</label>
+				<baseOpinionOffset>-10</baseOpinionOffset>
+			</li>
+		</stages>
+	</ThoughtDef>
+
+</Defs>

@@ -1,0 +1,34 @@
+---------------------------------------------------------------------------------
+  Changelog for "Rainbeau's Rumor Has It...."
+---------------------------------------------------------------------------------
+
+- 11/03/2018
+	- Added the "Quarrel" incident. (This was taken from Linq/World-Mule's
+	  "Expanded Incidents" mod.)
+	- The negative impact of the Annoying Voice, Creepy Breathing, Disfigured,
+	  and Ugly traits is now reduced for pawns who have any of those traits 
+	  themselves. (This was originally a feature in SeveralPuffins' "Romance 
+	  Diversified," but it didn't make it into "Rational Romance," as I think it
+	  fits better here, in a mod that primarily focuses on what pawns think of
+	  each other.)
+	- Made some slight adjustments to the mod's mood penalties and buffs, making
+	  them generally a bit milder. They still won't seem unreasonably low when
+	  compared to vanilla penalties and buffs, but also shouldn't seem too high
+	  when matched against those of "Grim Reality" or similar mods.
+
+- 11/01/2018
+	- Initial release of "Rumor Has It" for RimWorld 1.0.
+
+- 06/13/2017
+    - SeveralPuffins' final update to his mod.
+	
+- 05/29/2017
+    - Updated for alpha 17.
+
+- 12/21/2016
+    - Updated for alpha 16.
+	
+- 11/06/2016
+    - Initial release of SeveralPuffins' "Rumours and Deception" for RimWorld
+	  alpha 15.
+	  

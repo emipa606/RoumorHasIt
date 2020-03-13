@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+	<InteractionDef>
+		<defName>ChattedAboutSomeone</defName>
+		<label>chatted about someone</label>
+		<workerClass>Rumor_Code.InteractionWorker_ChattedAboutSomeone</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Chitchat</symbol>
+		<initiatorThought>Chitchat</initiatorThought>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>4</initiatorXpGainAmount>
+		<recipientThought>Chitchat</recipientThought>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] chatted with [RECIPIENT_nameDef] about the other colonists.</li>
+			</rulesStrings>
+		</logRulesInitiator>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>Apologize</defName>
+		<label>make peace</label>
+		<workerClass>Rumor_Code.InteractionWorker_Apologize</workerClass>
+		<symbol>RUM_Mote_Dove</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>10</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] apologized to [RECIPIENT_nameDef].</li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[RECIPIENT_nameDef] was apologized to by [INITIATOR_nameDef].</li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>MakePeace</defName>
+		<label>make peace</label>
+		<workerClass>Rumor_Code.InteractionWorker_MakePeace</workerClass>
+		<symbol>RUM_Mote_Dove</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>10</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] tried to convince [RECIPIENT_nameDef] to forgive a slight.</li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[RECIPIENT_nameDef] was asked by [INITIATOR_nameDef] to forgive a slight.</li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>SharedSecret</defName>
+		<label>shared secret</label>
+		<workerClass>Rumor_Code.InteractionWorker_SharedSecret</workerClass>
+		<symbol>RUM_Mote_Mask</symbol>
+		<initiatorThought>SharedSecret</initiatorThought>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>10</initiatorXpGainAmount>
+		<recipientThought>ReceivedSecret</recipientThought>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>RevealSecret</defName>
+		<label>reveal secret</label>
+		<workerClass>Rumor_Code.InteractionWorker_RevealSecret</workerClass>
+		<symbol>RUM_Mote_Mask</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>5</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] revealed another colonist's secret to [RECIPIENT_nameDef].</li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[RECIPIENT_nameDef] was told another colonist's secret by [INITIATOR_nameDef].</li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>SpreadRumors</defName>
+		<label>spread rumors</label>
+		<workerClass>Rumor_Code.InteractionWorker_SpreadRumors</workerClass>
+		<symbol>RUM_Mote_Mask</symbol>
+		<initiatorXpGainSkill>Social</initiatorXpGainSkill>
+		<initiatorXpGainAmount>10</initiatorXpGainAmount>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] spread a rumor to [RECIPIENT_nameDef].</li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[RECIPIENT_nameDef] heard a rumor from [INITIATOR_nameDef].</li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+
+	<InteractionDef>
+		<defName>CultureClash</defName>
+		<label>culture clash</label>
+		<workerClass>Rumor_Code.InteractionWorker_CultureClash</workerClass>
+		<symbol>Things/Mote/SpeechSymbols/Slight</symbol>
+		<socialFightBaseChance>0.04</socialFightBaseChance>
+		<recipientThought>Insulted</recipientThought>
+		<logRulesInitiator>
+			<rulesStrings>
+				<li>r_logentry->[INITIATOR_nameDef] accidentally insulted [RECIPIENT_nameDef], </li>
+			</rulesStrings>
+		</logRulesInitiator>
+		<logRulesRecipient>
+			<rulesStrings>
+				<li>r_logentry->[RECIPIENT_nameDef] was insulted by [INITIATOR_nameDef], </li>
+			</rulesStrings>
+		</logRulesRecipient>
+	</InteractionDef>
+  
+</Defs>
