@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
-
-	<name>[RF] Rumor Has It.... (Continued)</name>
-	<packageId>Mlie.RFRumorHasIt</packageId>
-	<author>Mlie</author>
-	<url>https://github.com/emipa606/RFRumorHasIt</url>
-	<supportedVersions>
-		<li>1.0</li>
-		<li>1.1</li>
-	</supportedVersions>
-	<modDependencies />
-	<loadAfter />	
-	<description>Update of Rainbeau Flambes mod for RimWorld 1.1
+  <name>[RF] Rumor Has It.... (Continued)</name>
+  <packageId>Mlie.RFRumorHasIt</packageId>
+  <author>Mlie</author>
+  <url>https://github.com/emipa606/RFRumorHasIt</url>
+  <supportedVersions>
+    <li>1.0</li>
+    <li>1.1</li>
+    <li>1.2</li>
+  </supportedVersions>
+  <modDependencies />
+  <loadAfter />
+  <description>Update of Rainbeau Flambes mod for RimWorld 1.1
 https://steamcommunity.com/sharedfiles/filedetails/?id=1584224458
 
 Support-chat:
@@ -104,5 +104,4 @@ If you're a modpack maker and want to include "Rumor Has It" in your pack, or if
 If you have any (helpful) suggestions for improvement, please let me know!
 
 	</description>
-
 </ModMetaData>
