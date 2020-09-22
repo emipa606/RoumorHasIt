@@ -2,7 +2,7 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 # SharpDevelop 5.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rainbeau's Rumor Has It", "Rainbeau's Rumor Has It.csproj", "{65553118-0867-478F-AAE3-79159EFB13A5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Rainbeau's Rumor Has It", "Rainbeau's Rumor Has It\Rainbeau's Rumor Has It.csproj", "{65553118-0867-478F-AAE3-79159EFB13A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

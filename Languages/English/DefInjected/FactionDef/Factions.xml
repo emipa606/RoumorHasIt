@@ -1,10 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <SplinterColony.label>splinter colony</SplinterColony.label>
-  <SplinterColony.description>A colony founded by a splinter faction from yours.</SplinterColony.description>
-  <SplinterColony.pawnsPlural>colonists</SplinterColony.pawnsPlural>
-  <SplinterColony.leaderTitle>premier</SplinterColony.leaderTitle>
-
+  <!--<SplinterColony.label>splinter colony</SplinterColony.label>-->
+  <!--<SplinterColony.description>A colony founded by a splinter faction from yours.</SplinterColony.description>-->
+  <!--<SplinterColony.pawnsPlural>colonists</SplinterColony.pawnsPlural>-->
+  <!--<SplinterColony.leaderTitle>premier</SplinterColony.leaderTitle>-->
 
 </LanguageData>

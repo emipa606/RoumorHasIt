@@ -29,8 +29,10 @@ namespace Rumor_Code
         public bool allowSplinters = true;
         public void DoWindowContents(Rect canvas)
         {
-            Listing_Standard list = new Listing_Standard();
-            list.ColumnWidth = canvas.width;
+            Listing_Standard list = new Listing_Standard
+            {
+                ColumnWidth = canvas.width
+            };
             list.Begin(canvas);
             list.Gap();
             list.CheckboxLabeled("RUMOR.AllowBrawls".Translate(), ref allowBrawls);
@@ -121,11 +123,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // ALERTS
-    //
-    // ==========
+    // ========== ALERTS ==========
 
     public class Alert_Cliques : Alert
     {
@@ -186,7 +184,7 @@ namespace Rumor_Code
 
     public class Alert_DefectionRisk : Alert
     {
-        private IEnumerable<Pawn> defectionRiskPawns
+        private IEnumerable<Pawn> DefectionRiskPawns
         {
             get
             {
@@ -199,13 +197,13 @@ namespace Rumor_Code
         {
             IEnumerable<Pawn> getAllFreeColonistsAlive = ThirdPartyManager.GetAllFreeColonistsAlive;
             AlertReport result;
-            if (getAllFreeColonistsAlive.Count<Pawn>() == 0)
+            if (getAllFreeColonistsAlive.Count() == 0)
             {
                 result = false;
             }
             else
             {
-                Pawn pawn = getAllFreeColonistsAlive.FirstOrDefault<Pawn>();
+                Pawn pawn = getAllFreeColonistsAlive.FirstOrDefault();
 
                 try
                 {
@@ -229,13 +227,13 @@ namespace Rumor_Code
         }
         public override TaggedString GetExplanation()
         {
-            TaggedString text = "";
+            TaggedString text;
             if (Controller.Settings.allowDefections.Equals(true))
             {
                 text = Translator.Translate("RUMOR.DefectionRiskMsg");
                 try
                 {
-                    foreach (Pawn current in defectionRiskPawns.ToList())
+                    foreach (Pawn current in DefectionRiskPawns.ToList())
                     {
                         text = text + "\n     " + current.NameShortColored;
                     }
@@ -249,7 +247,7 @@ namespace Rumor_Code
                 text = Translator.Translate("RUMOR.SocialIsolationMsg");
                 try
                 {
-                    foreach (Pawn current2 in defectionRiskPawns.ToList())
+                    foreach (Pawn current2 in DefectionRiskPawns.ToList())
                     {
                         text = text + "\n     " + current2.NameShortColored;
                     }
@@ -275,11 +273,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // CARAVAN SOCIAL MANAGER
-    //
-    // ==========
+    // ========== CARAVAN SOCIAL MANAGER ==========
 
     public static class CaravanSocialManager
     {
@@ -293,11 +287,11 @@ namespace Rumor_Code
         public static void MakeCaravanInteract(Caravan c)
         {
             List<Pawn> pawnsListForReading = c.PawnsListForReading;
-            if (pawnsListForReading.Count<Pawn>() >= 3)
+            if (pawnsListForReading.Count() >= 3)
             {
                 foreach (Pawn current in pawnsListForReading)
                 {
-                    if ((double)Rand.Value < 0.02)
+                    if (Rand.Value < 0.02)
                     {
                         CaravanSocialManager.TryInteractRandomly(current);
                     }
@@ -307,10 +301,6 @@ namespace Rumor_Code
         public static bool TryInteractWith(Pawn initiator, Pawn recipient, InteractionDef intDef)
         {
             bool result;
-            string letterText;
-            string letterLabel;
-            LetterDef letterDef;
-            LookTargets lookTargets;
 
             if (initiator == recipient)
             {
@@ -330,17 +320,17 @@ namespace Rumor_Code
                 }
                 if (intDef.initiatorXpGainSkill != null)
                 {
-                    initiator.skills.Learn(intDef.initiatorXpGainSkill, (float)intDef.initiatorXpGainAmount, false);
+                    initiator.skills.Learn(intDef.initiatorXpGainSkill, intDef.initiatorXpGainAmount, false);
                 }
                 if (intDef.recipientXpGainSkill != null && recipient.RaceProps.Humanlike)
                 {
-                    recipient.skills.Learn(intDef.recipientXpGainSkill, (float)intDef.recipientXpGainAmount, false);
+                    recipient.skills.Learn(intDef.recipientXpGainSkill, intDef.recipientXpGainAmount, false);
                 }
                 bool flag = false;
                 if (recipient.RaceProps.Humanlike) { }
                 if (!flag)
                 {
-                    intDef.Worker.Interacted(initiator, recipient, list, out letterText, out letterLabel, out letterDef, out lookTargets);
+                    intDef.Worker.Interacted(initiator, recipient, list, out _, out _, out _, out _);
                 }
                 Find.PlayLog.Add(new PlayLogEntry_Interaction(intDef, initiator, recipient, list));
                 result = true;
@@ -364,13 +354,13 @@ namespace Rumor_Code
                 if (p.interactions == null) { }
                 if (p.RaceProps.Humanlike)
                 {
-                    List<Pawn> list = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList<Pawn>();
-                    if (list.Count<Pawn>() == 0)
+                    List<Pawn> list = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
+                    if (list.Count() == 0)
                     {
                         result = false;
                         return result;
                     }
-                    GenList.Shuffle<Pawn>(list);
+                    GenList.Shuffle(list);
                     List<InteractionDef> allDefsListForReading = DefDatabase<InteractionDef>.AllDefsListForReading;
                     for (int i = 0; i < list.Count; i++)
                     {
@@ -380,8 +370,7 @@ namespace Rumor_Code
                             result = false;
                             return result;
                         }
-                        InteractionDef intDef;
-                        if (GenCollection.TryRandomElementByWeight<InteractionDef>(allDefsListForReading, (InteractionDef x) => CaravanSocialManager.ParsedRandomInteractionWeight(x, p, p2), out intDef))
+                        if (GenCollection.TryRandomElementByWeight(allDefsListForReading, (InteractionDef x) => CaravanSocialManager.ParsedRandomInteractionWeight(x, p, p2), out InteractionDef intDef))
                         {
                             if (CaravanSocialManager.TryInteractWith(p, p2, intDef))
                             {
@@ -395,13 +384,13 @@ namespace Rumor_Code
                 else if (p.RaceProps.Animal && Rand.Value < 0.05f)
                 {
                     InteractionDef nuzzle = InteractionDefOf.Nuzzle;
-                    List<Pawn> list2 = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList<Pawn>();
-                    if (list2.Count<Pawn>() == 0)
+                    List<Pawn> list2 = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
+                    if (list2.Count() == 0)
                     {
                         result = false;
                         return result;
                     }
-                    GenList.Shuffle<Pawn>(list2);
+                    GenList.Shuffle(list2);
                     List<InteractionDef> allDefsListForReading2 = DefDatabase<InteractionDef>.AllDefsListForReading;
                     for (int j = 0; j < list2.Count; j++)
                     {
@@ -425,7 +414,7 @@ namespace Rumor_Code
         }
         private static float ParsedRandomInteractionWeight(InteractionDef def, Pawn p1, Pawn p2)
         {
-            float result = 0f;
+            float result;
             try
             {
                 result = def.Worker.RandomSelectionWeight(p1, p2);
@@ -441,8 +430,7 @@ namespace Rumor_Code
             float statValue = StatExtension.GetStatValue(otherPawn, StatDefOf.SocialImpact, true);
             Thought_Memory thought_Memory = (Thought_Memory)ThoughtMaker.MakeThought(thoughtDef);
             thought_Memory.moodPowerFactor = statValue;
-            Thought_MemorySocial thought_MemorySocial = thought_Memory as Thought_MemorySocial;
-            if (thought_MemorySocial != null)
+            if (thought_Memory is Thought_MemorySocial thought_MemorySocial)
             {
                 thought_MemorySocial.opinionOffset *= statValue;
             }
@@ -450,11 +438,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // INCIDENT WORKERS
-    //
-    // ==========
+    // ========== INCIDENT WORKERS ==========
 
     public class IncidentWorker_Brawl : IncidentWorker
     {
@@ -475,7 +459,7 @@ namespace Rumor_Code
                 }
                 else
                 {
-                    ICollection<Pawn> collection = GenCollection.RandomElement<ICollection<Pawn>>(isolatedCliques);
+                    ICollection<Pawn> collection = GenCollection.RandomElement(isolatedCliques);
                     foreach (Pawn current in collection)
                     {
                         if (current.Downed || !current.Spawned || current.Dead || current.Map != map)
@@ -489,8 +473,8 @@ namespace Rumor_Code
                     }
                     else
                     {
-                        ICollection<Pawn> collection2 = map.mapPawns.FreeColonistsSpawned.Except(collection).ToList<Pawn>();
-                        if (collection2 == null || collection2.Count<Pawn>() < 2)
+                        ICollection<Pawn> collection2 = map.mapPawns.FreeColonistsSpawned.Except(collection).ToList();
+                        if (collection2 == null || collection2.Count() < 2)
                         {
                             result = false;
                         }
@@ -501,7 +485,7 @@ namespace Rumor_Code
                             {
                                 if (current2 != null)
                                 {
-                                    Pawn pawn = GenCollection.RandomElement<Pawn>(collection2);
+                                    Pawn pawn = GenCollection.RandomElement(collection2);
                                     if (pawn != null)
                                     {
                                         if (RestUtility.Awake(current2) && RestUtility.Awake(pawn))
@@ -520,7 +504,7 @@ namespace Rumor_Code
                                 {
                                     text = text + "\n    " + current3.Name.ToStringShort;
                                 }
-                                Find.LetterStack.ReceiveLetter(Translator.Translate("RUMOR.Brawl"), text, LetterDefOf.NegativeEvent, GenCollection.RandomElement<Pawn>(collection), null);
+                                Find.LetterStack.ReceiveLetter(Translator.Translate("RUMOR.Brawl"), text, LetterDefOf.NegativeEvent, GenCollection.RandomElement(collection), null);
                                 result = true;
                             }
                             else
@@ -541,8 +525,10 @@ namespace Rumor_Code
         {
             p.SetFaction(defection, null);
             p.jobs.ClearQueuedJobs();
-            List<Pawn> list = new List<Pawn>();
-            list.Add(p);
+            List<Pawn> list = new List<Pawn>
+            {
+                p
+            };
             LordJob_ExitMapBest lordJob_ExitMapBest = new LordJob_ExitMapBest(LocomotionUrgency.Walk, false);
             LordMaker.MakeNewLord(defection, lordJob_ExitMapBest, p.Map, list);
         }
@@ -557,7 +543,7 @@ namespace Rumor_Code
             {
                 Map map = (Map)parms.target;
                 IEnumerable<Pawn> freeColonistsSpawned = map.mapPawns.FreeColonistsSpawned;
-                if (freeColonistsSpawned.Count<Pawn>() == 0)
+                if (freeColonistsSpawned.Count() == 0)
                 {
                     result = false;
                 }
@@ -566,13 +552,13 @@ namespace Rumor_Code
                     IEnumerable<Pawn> enumerable = from x in freeColonistsSpawned
                                                    where ThirdPartyManager.DoesEveryoneLocallyHate(x)
                                                    select x;
-                    if (enumerable.Count<Pawn>() == 0)
+                    if (enumerable.Count() == 0)
                     {
                         result = false;
                     }
                     else
                     {
-                        Pawn pawn = GenCollection.RandomElement<Pawn>(enumerable);
+                        Pawn pawn = GenCollection.RandomElement(enumerable);
                         if (pawn == null)
                         {
                             result = false;
@@ -591,13 +577,13 @@ namespace Rumor_Code
                             enumerable2 = from f in enumerable2
                                           where !f.IsPlayer && f.PlayerGoodwill > 10f
                                           select f;
-                            if (enumerable2.Count<Faction>() == 0)
+                            if (enumerable2.Count() == 0)
                             {
                                 result = false;
                             }
                             else
                             {
-                                Faction faction = GenCollection.RandomElement<Faction>(enumerable2);
+                                Faction faction = GenCollection.RandomElement(enumerable2);
                                 Find.LetterStack.ReceiveLetter(Translator.Translate("RUMOR.Defection"), pawn.Name.ToStringShort + Translator.Translate("RUMOR.DefectedToString") + faction.Name + Translator.Translate("RUMOR.DueToIsolationString"), LetterDefOf.NegativeEvent, pawn, null);
                                 this.RunAway(pawn, faction);
                                 result = true;
@@ -615,11 +601,11 @@ namespace Rumor_Code
         private void HaveEpisode(Pawn p)
         {
             float value = Rand.Value;
-            if ((double)value < 0.15)
+            if (value < 0.15)
             {
                 p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk, null, false, false, null);
             }
-            else if ((double)value < 0.45)
+            else if (value < 0.45)
             {
                 p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Wander_Psychotic, null, false, false, null);
             }
@@ -638,13 +624,13 @@ namespace Rumor_Code
                                            where ThirdPartyManager.DoesEveryoneLocallyHate(x)
                                            select x;
             bool result;
-            if (enumerable.Count<Pawn>() == 0)
+            if (enumerable.Count() == 0)
             {
                 result = false;
             }
             else
             {
-                Pawn pawn = GenCollection.RandomElement<Pawn>(enumerable);
+                Pawn pawn = GenCollection.RandomElement(enumerable);
                 if (pawn == null)
                 {
                     result = false;
@@ -728,9 +714,11 @@ namespace Rumor_Code
         }
         public static Faction BuildNewFaction(Map sourceMap, bool hostile)
         {
-            Faction faction = new Faction();
-            faction.def = RumorsFactionDefOf.SplinterColony;
-            faction.loadID = Find.UniqueIDsManager.GetNextFactionID();
+            Faction faction = new Faction
+            {
+                def = RumorsFactionDefOf.SplinterColony,
+                loadID = Find.UniqueIDsManager.GetNextFactionID()
+            };
             faction.colorFromSpectrum = IncidentWorker_NewFactionFormed.NewRandomColorFromSpectrum(faction);
             if (!faction.def.isPlayer)
             {
@@ -779,7 +767,7 @@ namespace Rumor_Code
                 }
                 else
                 {
-                    ICollection<Pawn> collection = GenCollection.RandomElement<ICollection<Pawn>>(isolatedCliques);
+                    ICollection<Pawn> collection = GenCollection.RandomElement(isolatedCliques);
                     foreach (Pawn current in collection)
                     {
                         if (current.Downed || !current.Spawned || current.Dead)
@@ -793,8 +781,8 @@ namespace Rumor_Code
                     }
                     else
                     {
-                        ICollection<Pawn> collection2 = map.mapPawns.FreeColonistsSpawned.Except(collection).ToList<Pawn>();
-                        if (collection2 == null || collection2.Count<Pawn>() < 2)
+                        ICollection<Pawn> collection2 = map.mapPawns.FreeColonistsSpawned.Except(collection).ToList();
+                        if (collection2 == null || collection2.Count() < 2)
                         {
                             result = false;
                         }
@@ -824,14 +812,14 @@ namespace Rumor_Code
                                         }
                                     }
                                 }
-                                Pawn pawn = GenCollection.RandomElement<Pawn>(collection);
+                                Pawn pawn = GenCollection.RandomElement(collection);
                                 faction.leader = pawn;
                                 string text = string.Format(Translator.Translate("RUMOR.SplitMsg"), faction.Name);
                                 foreach (Pawn current5 in collection)
                                 {
                                     text = text + current5.Name.ToStringShort + ",   ";
                                 }
-                                Find.LetterStack.ReceiveLetter(Translator.Translate("RUMOR.Split"), text, LetterDefOf.NegativeEvent, GenCollection.RandomElement<Pawn>(collection), null);
+                                Find.LetterStack.ReceiveLetter(Translator.Translate("RUMOR.Split"), text, LetterDefOf.NegativeEvent, GenCollection.RandomElement(collection), null);
                                 if (pawn.Map != null)
                                 {
                                     LordJob_Steal lordJob_Steal = new LordJob_Steal();
@@ -871,11 +859,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // INTERACTION WORKERS
-    //
-    // ==========
+    // ========== INTERACTION WORKERS ==========
 
     public class InteractionWorker_Apologize : InteractionWorker
     {
@@ -896,7 +880,7 @@ namespace Rumor_Code
                 enumerable = from x in enumerable
                              where ((Thought_MemorySocial)x).OtherPawn() == initiator
                              select x;
-                if (enumerable.Count<Thought_Memory>() == 0)
+                if (enumerable.Count() == 0)
                 {
                     result = 0f;
                 }
@@ -920,10 +904,10 @@ namespace Rumor_Code
             enumerable = from x in enumerable
                          where ((Thought_MemorySocial)x).OtherPawn() == initiator
                          select x;
-            if (enumerable.Count<Thought_Memory>() != 0)
+            if (enumerable.Count() != 0)
             {
-                Thought_MemorySocial thought_MemorySocial = (Thought_MemorySocial)GenCollection.RandomElement<Thought_Memory>(enumerable);
-                float num = (float)(Rand.Range(1, 100) + initiator.skills.GetSkill(SkillDefOf.Social).Level);
+                Thought_MemorySocial thought_MemorySocial = (Thought_MemorySocial)GenCollection.RandomElement(enumerable);
+                float num = Rand.Range(1, 100) + initiator.skills.GetSkill(SkillDefOf.Social).Level;
                 if (num < 40f)
                 {
                     extraSentencePacks.Add(RumorsRulePackDefOf.Sentence_ApologyFailed);
@@ -981,10 +965,10 @@ namespace Rumor_Code
             lookTargets = null;
             if (this.p3 != null)
             {
-                bool flag = (float)Rand.Range(0, 100) < ((float)initiator.relations.OpinionOf(recipient) + 20f + 1.5f * (float)recipient.skills.GetSkill(SkillDefOf.Social).Level) / 1.5f;
-                bool flag2 = (float)Rand.Range(0, 100) < ((float)recipient.relations.OpinionOf(initiator) + 20f + 1.5f * (float)initiator.skills.GetSkill(SkillDefOf.Social).Level) / 1.5f;
-                float num = (float)initiator.relations.OpinionOf(this.p3);
-                float num2 = (float)initiator.relations.OpinionOf(this.p3);
+                bool flag = Rand.Range(0, 100) < (initiator.relations.OpinionOf(recipient) + 20f + 1.5f * recipient.skills.GetSkill(SkillDefOf.Social).Level) / 1.5f;
+                bool flag2 = Rand.Range(0, 100) < (recipient.relations.OpinionOf(initiator) + 20f + 1.5f * initiator.skills.GetSkill(SkillDefOf.Social).Level) / 1.5f;
+                float num = initiator.relations.OpinionOf(this.p3);
+                float num2 = initiator.relations.OpinionOf(this.p3);
                 if (flag && !initiator.story.traits.HasTrait(RumorsTraitDefOf.Manipulative))
                 {
                     ThoughtDef thoughtDef = null;
@@ -1040,7 +1024,7 @@ namespace Rumor_Code
             IEnumerable<Pawn> enumerable = ThirdPartyManager.GetKnownPeople(p1, p2);
             enumerable = enumerable.Concat(ThirdPartyManager.GetKnownPeople(p1, p2).Intersect(ThirdPartyManager.GetAllColonistsLocalTo(p1)));
             Pawn result;
-            if (enumerable.Count<Pawn>() == 0)
+            if (enumerable.Count() == 0)
             {
                 result = null;
             }
@@ -1049,18 +1033,18 @@ namespace Rumor_Code
                 IEnumerable<Pawn> enumerable2 = from x in enumerable
                                                 where (p1.relations.OpinionOf(x) < -10 && p2.relations.OpinionOf(x) > 10) || (p1.relations.OpinionOf(x) > 10 && p2.relations.OpinionOf(x) < -10)
                                                 select x;
-                if (enumerable2.Count<Pawn>() == 0)
+                if (enumerable2.Count() == 0)
                 {
                     result = null;
                 }
                 else
                 {
-                    result = GenCollection.RandomElement<Pawn>(enumerable2);
+                    result = GenCollection.RandomElement(enumerable2);
                 }
             }
             else
             {
-                result = GenCollection.RandomElement<Pawn>(enumerable);
+                result = GenCollection.RandomElement(enumerable);
             }
             return result;
         }
@@ -1165,7 +1149,7 @@ namespace Rumor_Code
                 enumerable = from x in enumerable
                              where ((Thought_MemorySocial)x).OtherPawn() != initiator
                              select x;
-                if (enumerable.Count<Thought_Memory>() == 0)
+                if (enumerable.Count() == 0)
                 {
                     result = 0f;
                 }
@@ -1189,10 +1173,10 @@ namespace Rumor_Code
             enumerable = from x in enumerable
                          where ((Thought_MemorySocial)x).OtherPawn() != initiator
                          select x;
-            if (enumerable.Count<Thought_Memory>() != 0)
+            if (enumerable.Count() != 0)
             {
-                Thought_Memory thought_Memory = GenCollection.RandomElement<Thought_Memory>(enumerable);
-                bool flag = (float)Rand.Range(0, 25) > thought_Memory.MoodOffset() + 2f + (float)initiator.skills.GetSkill(SkillDefOf.Social).Level;
+                Thought_Memory thought_Memory = GenCollection.RandomElement(enumerable);
+                bool flag = Rand.Range(0, 25) > thought_Memory.MoodOffset() + 2f + initiator.skills.GetSkill(SkillDefOf.Social).Level;
                 if (flag)
                 {
                     recipient.needs.mood.thoughts.memories.RemoveMemory(thought_Memory);
@@ -1231,7 +1215,7 @@ namespace Rumor_Code
             else
             {
                 IEnumerable<Thought_Memory> enumerable = ThirdPartyManager.GetMemoriesWithDef(initiator, RumorsThoughtDefOf.ReceivedSecret);
-                if (enumerable.Count<Thought_Memory>() == 0)
+                if (enumerable.Count() == 0)
                 {
                     result = 0f;
                 }
@@ -1240,23 +1224,23 @@ namespace Rumor_Code
                     enumerable = from x in enumerable
                                  where ((Thought_MemorySocial)x).OtherPawn() != recipient
                                  select x;
-                    if (enumerable.Count<Thought_Memory>() == 0)
+                    if (enumerable.Count() == 0)
                     {
                         result = 0f;
                     }
                     else
                     {
-                        Thought_MemorySocial memory = GenCollection.RandomElement<Thought_Memory>(enumerable) as Thought_MemorySocial;
+                        Thought_MemorySocial memory = GenCollection.RandomElement(enumerable) as Thought_MemorySocial;
                         IEnumerable<Pawn> enumerable2 = from x in ThirdPartyManager.GetAllFreeColonistsAlive
                                                         where x == memory.OtherPawn()
                                                         select x;
-                        if (enumerable2.Count<Pawn>() == 0)
+                        if (enumerable2.Count() == 0)
                         {
                             result = 0f;
                         }
                         else
                         {
-                            this.p3 = GenCollection.RandomElement<Pawn>(enumerable2);
+                            this.p3 = GenCollection.RandomElement(enumerable2);
                             if (this.p3 == null)
                             {
                                 result = 0f;
@@ -1268,7 +1252,7 @@ namespace Rumor_Code
                                 {
                                     num /= 2f;
                                 }
-                                if (num > Mathf.InverseLerp(75f, -50f, (float)initiator.relations.OpinionOf(this.p3)))
+                                if (num > Mathf.InverseLerp(75f, -50f, initiator.relations.OpinionOf(this.p3)))
                                 {
                                     result = 0f;
                                 }
@@ -1279,7 +1263,7 @@ namespace Rumor_Code
                                     {
                                         num2 *= 3.5f;
                                     }
-                                    num2 *= (100f + (float)initiator.relations.OpinionOf(recipient)) / 200f;
+                                    num2 *= (100f + initiator.relations.OpinionOf(recipient)) / 200f;
                                     result = num2;
                                 }
                             }
@@ -1303,9 +1287,9 @@ namespace Rumor_Code
                     enumerable = from x in enumerable
                                  where ((Thought_MemorySocial)x).OtherPawn() == initiator
                                  select x;
-                    if (enumerable.Count<Thought_Memory>() > 0)
+                    if (enumerable.Count() > 0)
                     {
-                        this.p3.needs.mood.thoughts.memories.RemoveMemory(GenCollection.RandomElement<Thought_Memory>(enumerable));
+                        this.p3.needs.mood.thoughts.memories.RemoveMemory(GenCollection.RandomElement(enumerable));
                     }
                     if (this.p3.Map == initiator.Map)
                     {
@@ -1318,23 +1302,27 @@ namespace Rumor_Code
 
     public class InteractionWorker_SharedSecret : InteractionWorker
     {
-        private SimpleCurve NormalCompatibilityCurve;
-        private SimpleCurve SharersCompatibilityCurve;
+        private readonly SimpleCurve NormalCompatibilityCurve;
+        private readonly SimpleCurve SharersCompatibilityCurve;
         public InteractionWorker_SharedSecret()
         {
-            SimpleCurve simpleCurve = new SimpleCurve();
-            simpleCurve.Add(new CurvePoint(-1.5f, 0f), true);
-            simpleCurve.Add(new CurvePoint(-0.5f, 0.1f), true);
-            simpleCurve.Add(new CurvePoint(0.5f, 1f), true);
-            simpleCurve.Add(new CurvePoint(1f, 1.8f), true);
-            simpleCurve.Add(new CurvePoint(2f, 3f), true);
+            SimpleCurve simpleCurve = new SimpleCurve
+            {
+                { new CurvePoint(-1.5f, 0f), true },
+                { new CurvePoint(-0.5f, 0.1f), true },
+                { new CurvePoint(0.5f, 1f), true },
+                { new CurvePoint(1f, 1.8f), true },
+                { new CurvePoint(2f, 3f), true }
+            };
             this.NormalCompatibilityCurve = simpleCurve;
-            simpleCurve = new SimpleCurve();
-            simpleCurve.Add(new CurvePoint(-1.5f, 1.1f), true);
-            simpleCurve.Add(new CurvePoint(-0.5f, 1.5f), true);
-            simpleCurve.Add(new CurvePoint(0.5f, 1.8f), true);
-            simpleCurve.Add(new CurvePoint(1f, 2f), true);
-            simpleCurve.Add(new CurvePoint(2f, 3f), true);
+            simpleCurve = new SimpleCurve
+            {
+                { new CurvePoint(-1.5f, 1.1f), true },
+                { new CurvePoint(-0.5f, 1.5f), true },
+                { new CurvePoint(0.5f, 1.8f), true },
+                { new CurvePoint(1f, 2f), true },
+                { new CurvePoint(2f, 3f), true }
+            };
             this.SharersCompatibilityCurve = simpleCurve;
         }
         public override float RandomSelectionWeight(Pawn initiator, Pawn recipient)
@@ -1420,7 +1408,7 @@ namespace Rumor_Code
             IEnumerable<Pawn> enumerable = ThirdPartyManager.GetKnownPeople(p1, p2);
             enumerable = enumerable.Concat(ThirdPartyManager.GetKnownPeople(p1, p2).Intersect(ThirdPartyManager.GetAllColonistsLocalTo(p1)));
             Pawn result;
-            if (enumerable.Count<Pawn>() == 0)
+            if (enumerable.Count() == 0)
             {
                 result = null;
             }
@@ -1443,11 +1431,11 @@ namespace Rumor_Code
                 }
                 else if (p1.story.traits.HasTrait(RumorsTraitDefOf.CompulsiveLiar))
                 {
-                    pawn = GenCollection.RandomElement<Pawn>(enumerable);
+                    pawn = GenCollection.RandomElement(enumerable);
                 }
                 else
                 {
-                    pawn = GenCollection.RandomElementByWeight<Pawn>(enumerable, (Pawn x) => 0.0025f * (100f - (float)p1.relations.OpinionOf(x)) + 0.0025f * (100f - (float)p2.relations.OpinionOf(x)));
+                    GenCollection.TryRandomElementByWeight(enumerable, (Pawn x) => 0.0025f * (100f - p1.relations.OpinionOf(x)) + 0.0025f * (100f - p2.relations.OpinionOf(x)), out pawn);
                 }
                 result = pawn;
             }
@@ -1455,11 +1443,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // THIRD PARTY MANAGER
-    //
-    // ==========
+    // ========== THIRD PARTY MANAGER ==========
 
     public static class ThirdPartyManager
     {
@@ -1491,7 +1475,7 @@ namespace Rumor_Code
                 IEnumerable<Pawn> getAllPlayerCaravans =
                     from car in ThirdPartyManager.GetAllPlayerCaravans
                     from col in car.PawnsListForReading
-                    where (!col.RaceProps.Humanlike || col.Dead ? false : (object)col.Faction == (object)Faction.OfPlayer)
+                    where (col.RaceProps.Humanlike && !col.Dead && col.Faction == (object)Faction.OfPlayer)
                     select col;
                 return getAllPlayerCaravans;
             }
@@ -1503,7 +1487,7 @@ namespace Rumor_Code
                 IEnumerable<Pawn> getAllMapsContainingFreeSpawnedColonists =
                     from map in ThirdPartyManager.GetAllMapsContainingFreeSpawnedColonists
                     from col in map.mapPawns.FreeColonistsSpawned
-                    where (!col.RaceProps.Humanlike || col.Dead ? false : (object)col.Faction == (object)Faction.OfPlayer)
+                    where (col.RaceProps.Humanlike && !col.Dead && col.Faction == (object)Faction.OfPlayer)
                     select col;
                 return getAllMapsContainingFreeSpawnedColonists;
             }
@@ -1542,7 +1526,7 @@ namespace Rumor_Code
         {
             IEnumerable<Pawn> allColonistsLocalTo = ThirdPartyManager.GetAllColonistsLocalTo(p);
             bool result;
-            if (allColonistsLocalTo.Count<Pawn>() < 1)
+            if (allColonistsLocalTo.Count() < 1)
             {
                 result = false;
             }
@@ -1565,18 +1549,18 @@ namespace Rumor_Code
             ThirdPartyManager.cliqueDict.Clear();
             foreach (Map m in Find.Maps)
             {
-                List<Pawn> list = m.mapPawns.FreeColonistsSpawned.ToList<Pawn>();
+                List<Pawn> list = m.mapPawns.FreeColonistsSpawned.ToList();
                 List<ICollection<Pawn>> list2 = new List<ICollection<Pawn>>();
-                float num = 0.667f * (float)list.Count;
+                float num = 0.667f * list.Count;
                 ThirdPartyManager.BKA(list2, new List<Pawn>(), list, new List<Pawn>());
-                if (list2.Count<ICollection<Pawn>>() == 0)
+                if (list2.Count() == 0)
                 {
                     break;
                 }
                 list2 = (from x in list2
                          where x.Count >= 3
-                         select x).ToList<ICollection<Pawn>>();
-                if (list2.Count<ICollection<Pawn>>() == 0)
+                         select x).ToList();
+                if (list2.Count() == 0)
                 {
                     break;
                 }
@@ -1586,12 +1570,12 @@ namespace Rumor_Code
                 {
                     List<ICollection<Pawn>> list3 = (from x in list2
                                                      where x.Contains(p)
-                                                     select x).ToList<ICollection<Pawn>>();
+                                                     select x).ToList();
                     if (list3.Count >= 2)
                     {
                         list3.Sort((ICollection<Pawn> x1, ICollection<Pawn> x2) => ThirdPartyManager.GetPawnAverageRelationshipWithGroup(p, x1).CompareTo(ThirdPartyManager.GetPawnAverageRelationshipWithGroup(p, x2)));
                         list3.Reverse();
-                        dictionary.Add(p, list3.FirstOrDefault<ICollection<Pawn>>());
+                        dictionary.Add(p, list3.FirstOrDefault());
                     }
                 }
                 foreach (Pawn current in list)
@@ -1608,27 +1592,26 @@ namespace Rumor_Code
                     }
                 }
                 list2 = (from x in list2
-                         where x.Count >= 3 && (float)x.Count < 0.667f * (float)m.mapPawns.FreeColonistsSpawnedCount
-                         select x).ToList<ICollection<Pawn>>();
-                if (list2.Count<ICollection<Pawn>>() == 0)
+                         where x.Count >= 3 && x.Count < 0.667f * m.mapPawns.FreeColonistsSpawnedCount
+                         select x).ToList();
+                if (list2.Count() == 0)
                 {
                     break;
                 }
-                List<ICollection<Pawn>> value = list2.Distinct<ICollection<Pawn>>().ToList<ICollection<Pawn>>();
+                List<ICollection<Pawn>> value = list2.Distinct().ToList();
                 ThirdPartyManager.first = false;
                 ThirdPartyManager.cliqueDict.Add(m, value);
             }
         }
         public static ICollection<ICollection<Pawn>> GetIsolatedCliques(this Map self, int threshold)
         {
-            List<ICollection<Pawn>> source = null;
             ICollection<ICollection<Pawn>> result;
-            if (ThirdPartyManager.cliqueDict.TryGetValue(self, out source))
+            if (ThirdPartyManager.cliqueDict.TryGetValue(self, out List<ICollection<Pawn>> source))
             {
                 IEnumerable<Pawn> allColonists = self.mapPawns.FreeColonistsSpawned;
                 result = (from clique in source
-                          where ThirdPartyManager.GetGroupAverageRelationshipWithGroup(clique, allColonists.Except(clique)) <= (float)threshold
-                          select clique).ToList<ICollection<Pawn>>();
+                          where ThirdPartyManager.GetGroupAverageRelationshipWithGroup(clique, allColonists.Except(clique)) <= threshold
+                          select clique).ToList();
             }
             else
             {
@@ -1641,9 +1624,9 @@ namespace Rumor_Code
             float num = 0f;
             foreach (Pawn current in g)
             {
-                num += (float)p.relations.OpinionOf(current);
+                num += p.relations.OpinionOf(current);
             }
-            return num / (float)g.Count<Pawn>();
+            return num / g.Count();
         }
         public static float GetGroupAverageRelationshipWithGroup(IEnumerable<Pawn> g1, IEnumerable<Pawn> g2)
         {
@@ -1652,7 +1635,7 @@ namespace Rumor_Code
             {
                 num += ThirdPartyManager.GetPawnAverageRelationshipWithGroup(current, g2);
             }
-            return num / (float)g1.Count<Pawn>();
+            return num / g1.Count();
         }
         public static void BKA(ICollection<ICollection<Pawn>> cliques, ICollection<Pawn> R, ICollection<Pawn> P, ICollection<Pawn> X)
         {
@@ -1665,15 +1648,15 @@ namespace Rumor_Code
             }
             else
             {
-                List<Pawn> list = P.Union(X).ToList<Pawn>();
-                list.Sort((Pawn p1, Pawn p2) => ThirdPartyManager.Neighbours(p1, P).Count<Pawn>().CompareTo(ThirdPartyManager.Neighbours(p2, P).Count<Pawn>()));
+                List<Pawn> list = P.Union(X).ToList();
+                list.Sort((Pawn p1, Pawn p2) => ThirdPartyManager.Neighbours(p1, P).Count().CompareTo(ThirdPartyManager.Neighbours(p2, P).Count()));
                 list.Reverse();
-                Pawn p = list.FirstOrDefault<Pawn>();
-                List<Pawn> second = ThirdPartyManager.Neighbours(p, P).ToList<Pawn>();
+                Pawn p = list.FirstOrDefault();
+                List<Pawn> second = ThirdPartyManager.Neighbours(p, P).ToList();
                 List<Pawn> list2 = new List<Pawn>();
                 List<Pawn> list3 = new List<Pawn>();
                 List<Pawn> list4 = new List<Pawn>();
-                List<Pawn> list5 = new List<Pawn>(P).Except(second).ToList<Pawn>();
+                List<Pawn> list5 = new List<Pawn>(P).Except(second).ToList();
                 foreach (Pawn current in list5)
                 {
                     list2.Clear();
@@ -1684,10 +1667,10 @@ namespace Rumor_Code
                     }
                     list3.Clear();
                     list3.AddRange(P);
-                    list3 = list3.Intersect(ThirdPartyManager.Neighbours(current, list)).ToList<Pawn>();
+                    list3 = list3.Intersect(ThirdPartyManager.Neighbours(current, list)).ToList();
                     list4.Clear();
                     list4.AddRange(X);
-                    list4 = list4.Intersect(ThirdPartyManager.Neighbours(current, list)).ToList<Pawn>();
+                    list4 = list4.Intersect(ThirdPartyManager.Neighbours(current, list)).ToList();
                     ThirdPartyManager.BKA(cliques, list2, list3, list4);
                     P.Remove(current);
                     X.Add(current);
@@ -1780,11 +1763,7 @@ namespace Rumor_Code
         }
     }
 
-    // ==========
-    //
-    // THOUGHT WORKERS
-    //
-    // ==========
+    // ========== THOUGHT WORKERS ==========
 
     public class ThoughtWorker_DividedColony : ThoughtWorker
     {
@@ -1803,7 +1782,7 @@ namespace Rumor_Code
             {
                 result = ThoughtState.Inactive;
             }
-            else if (p.Map.GetIsolatedCliques(-3).Count<ICollection<Pawn>>() > 0 && p.Faction == Faction.OfPlayer)
+            else if (p.Map.GetIsolatedCliques(-3).Count() > 0 && p.Faction == Faction.OfPlayer)
             {
                 result = ThoughtState.ActiveAtStage(0);
             }
@@ -1832,7 +1811,7 @@ namespace Rumor_Code
             {
                 result = ThoughtState.Inactive;
             }
-            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count<Pawn>() < 2)
+            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 2)
             {
                 result = ThoughtState.Inactive;
             }
@@ -1881,7 +1860,7 @@ namespace Rumor_Code
             {
                 result = ThoughtState.Inactive;
             }
-            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count<Pawn>() < 2)
+            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 2)
             {
                 result = ThoughtState.Inactive;
             }
@@ -1914,7 +1893,7 @@ namespace Rumor_Code
             {
                 result = ThoughtState.Inactive;
             }
-            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count<Pawn>() < 3)
+            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 3)
             {
                 result = ThoughtState.Inactive;
             }
@@ -1983,7 +1962,7 @@ namespace Rumor_Code
             }
             else if (other.story.traits.HasTrait(TraitDefOf.AnnoyingVoice))
             {
-                thoughtState = (!pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (!pawn.UnderstandsDisability());
             }
             else
             {
@@ -2009,7 +1988,7 @@ namespace Rumor_Code
             }
             else if (other.story.traits.HasTrait(TraitDefOf.AnnoyingVoice))
             {
-                thoughtState = (pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (pawn.UnderstandsDisability());
             }
             else
             {
@@ -2035,7 +2014,7 @@ namespace Rumor_Code
             }
             else if (other.story.traits.HasTrait(TraitDefOf.CreepyBreathing))
             {
-                thoughtState = (!pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (!pawn.UnderstandsDisability());
             }
             else
             {
@@ -2061,7 +2040,7 @@ namespace Rumor_Code
             }
             else if (other.story.traits.HasTrait(TraitDefOf.CreepyBreathing))
             {
-                thoughtState = (pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (pawn.UnderstandsDisability());
             }
             else
             {
@@ -2087,7 +2066,7 @@ namespace Rumor_Code
             }
             else if (RelationsUtility.IsDisfigured(other))
             {
-                thoughtState = (!pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (!pawn.UnderstandsDisability());
             }
             else
             {
@@ -2113,7 +2092,7 @@ namespace Rumor_Code
             }
             else if (RelationsUtility.IsDisfigured(other))
             {
-                thoughtState = (pawn.UnderstandsDisability() ? true : false);
+                thoughtState = (pawn.UnderstandsDisability());
             }
             else
             {
@@ -2204,7 +2183,7 @@ namespace Rumor_Code
         public static bool UnderstandsDisability(this Pawn self)
         {
             bool flag;
-            flag = (RelationsUtility.IsDisfigured(self) || self.story.traits.DegreeOfTrait(TraitDefOf.Beauty) < 0 || self.story.traits.HasTrait(TraitDefOf.CreepyBreathing) || self.story.traits.HasTrait(TraitDefOf.AnnoyingVoice) ? true : false);
+            flag = (RelationsUtility.IsDisfigured(self) || self.story.traits.DegreeOfTrait(TraitDefOf.Beauty) < 0 || self.story.traits.HasTrait(TraitDefOf.CreepyBreathing) || self.story.traits.HasTrait(TraitDefOf.AnnoyingVoice));
             return flag;
         }
     }

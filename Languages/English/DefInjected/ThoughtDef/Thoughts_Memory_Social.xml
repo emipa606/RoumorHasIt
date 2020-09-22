@@ -1,34 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <SharedSecret.stages.0.label>shared secret</SharedSecret.stages.0.label>
-  <ReceivedSecret.stages.0.label>received secret</ReceivedSecret.stages.0.label>
-  <MySecretWasRevealed.stages.0.label>{0} revealed my secret.</MySecretWasRevealed.stages.0.label>
-
-  <MySecretWasRevealedMood.stages.0.label>{0} revealed my secret!</MySecretWasRevealedMood.stages.0.label>
-  <MySecretWasRevealedMood.stages.0.description>I'm mortified! How will I face the others?</MySecretWasRevealedMood.stages.0.description>
-
-  <ILied.stages.0.label>i lied.</ILied.stages.0.label>
-
-  <ILiedMood.stages.0.label>told lies.</ILiedMood.stages.0.label>
-  <ILiedMood.stages.0.description>I spread gossip I couldn't verify. I'm a terrible person!</ILiedMood.stages.0.description>
-
-  <HeardGreatThings.stages.0.label>heard great things about {0}.</HeardGreatThings.stages.0.label>
-  <HeardGoodThings.stages.0.label>heard good things about {0}.</HeardGoodThings.stages.0.label>
-  <HeardBadThings.stages.0.label>heard unpleasant things about {0}.</HeardBadThings.stages.0.label>
-  <HeardAwfulThings.stages.0.label>heard terrible things about {0}.</HeardAwfulThings.stages.0.label>
-  <LiedTo.stages.0.label>lied to by {0}.</LiedTo.stages.0.label>
-  <ApologizedTo.stages.0.label>{0} apologized.</ApologizedTo.stages.0.label>
-  <ApologizedToBig.stages.0.label>{0} gave a heartfelt apology.</ApologizedToBig.stages.0.label>
-  <HadLiesToldAboutMe.stages.0.label>{0} lied about me.</HadLiesToldAboutMe.stages.0.label>
-
-  <LiedAboutMood.stages.0.label>{0} told lies about me!</LiedAboutMood.stages.0.label>
-  <LiedAboutMood.stages.0.description>I am outraged that someone would spread these awful rumors!</LiedAboutMood.stages.0.description>
-
-  <EnjoyMakingPeace.stages.0.label>ended a dispute.</EnjoyMakingPeace.stages.0.label>
-  <EnjoyMakingPeace.stages.0.description>I'm so happy that I can help the others get along!</EnjoyMakingPeace.stages.0.description>
-
-  <FriendsQuarrel.stages.0.label>holding a grudge</FriendsQuarrel.stages.0.label>
-
+  <!--<SharedSecret.stages.0.label>shared secret</SharedSecret.stages.0.label>-->
+  <!--<ReceivedSecret.stages.0.label>received secret</ReceivedSecret.stages.0.label>-->
+  <!--<MySecretWasRevealed.stages.0.label>{0} revealed my secret.</MySecretWasRevealed.stages.0.label>-->
+  <!--<MySecretWasRevealedMood.stages.0.label>{0} revealed my secret!</MySecretWasRevealedMood.stages.0.label>-->
+  <!--<MySecretWasRevealedMood.stages.0.description>I'm mortified! How will I face the others?</MySecretWasRevealedMood.stages.0.description>-->
+  <!--<ILied.stages.0.label>i lied.</ILied.stages.0.label>-->
+  <!--<ILiedMood.stages.0.label>told lies.</ILiedMood.stages.0.label>-->
+  <!--<ILiedMood.stages.0.description>I spread gossip I couldn't verify. I'm a terrible person!</ILiedMood.stages.0.description>-->
+  <!--<HeardGreatThings.stages.0.label>heard great things about {0}.</HeardGreatThings.stages.0.label>-->
+  <!--<HeardGoodThings.stages.0.label>heard good things about {0}.</HeardGoodThings.stages.0.label>-->
+  <!--<HeardBadThings.stages.0.label>heard unpleasant things about {0}.</HeardBadThings.stages.0.label>-->
+  <!--<HeardAwfulThings.stages.0.label>heard terrible things about {0}.</HeardAwfulThings.stages.0.label>-->
+  <!--<LiedTo.stages.0.label>lied to by {0}.</LiedTo.stages.0.label>-->
+  <!--<ApologizedTo.stages.0.label>{0} apologized.</ApologizedTo.stages.0.label>-->
+  <!--<ApologizedToBig.stages.0.label>{0} gave a heartfelt apology.</ApologizedToBig.stages.0.label>-->
+  <!--<HadLiesToldAboutMe.stages.0.label>{0} lied about me.</HadLiesToldAboutMe.stages.0.label>-->
+  <!--<LiedAboutMood.stages.0.label>{0} told lies about me!</LiedAboutMood.stages.0.label>-->
+  <!--<LiedAboutMood.stages.0.description>I am outraged that someone would spread these awful rumors!</LiedAboutMood.stages.0.description>-->
+  <!--<EnjoyMakingPeace.stages.0.label>ended a dispute.</EnjoyMakingPeace.stages.0.label>-->
+  <!--<EnjoyMakingPeace.stages.0.description>I'm so happy that I can help the others get along!</EnjoyMakingPeace.stages.0.description>-->
+  <!--<FriendsQuarrel.stages.0.label>holding a grudge</FriendsQuarrel.stages.0.label>-->
 
 </LanguageData>

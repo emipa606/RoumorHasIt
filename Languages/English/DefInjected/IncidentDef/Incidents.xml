@@ -1,20 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <SplinterFaction.label>splinter faction</SplinterFaction.label>
-  <SplinterFaction.letterText>A group of colonists have decided to go independent, and have split off to form a new faction.</SplinterFaction.letterText>
-  <SplinterFaction.letterLabel>Splinter Faction</SplinterFaction.letterLabel>
-
-  <Defection.label>defection</Defection.label>
-  <Defection.letterText>A colonist has become so socially isolated that they have decided to leave for another faction.</Defection.letterText>
-  <Defection.letterLabel>Defection!</Defection.letterLabel>
-
-  <MadWithLoneliness.label>mad with loneliness</MadWithLoneliness.label>
-  <MadWithLoneliness.letterText>A colonist has had a mental break due to severe social isolation!</MadWithLoneliness.letterText>
-  <MadWithLoneliness.letterLabel>Loneliness!</MadWithLoneliness.letterLabel>
-
-  <Brawl.label>angry brawl</Brawl.label>
-  <FriendsQuarrel.label>quarrel</FriendsQuarrel.label>
-
+  <!--<SplinterFaction.label>splinter faction</SplinterFaction.label>-->
+  <!--<SplinterFaction.letterText>A group of colonists have decided to go independent, and have split off to form a new faction.</SplinterFaction.letterText>-->
+  <!--<SplinterFaction.letterLabel>Splinter Faction</SplinterFaction.letterLabel>-->
+  <!--<Defection.label>defection</Defection.label>-->
+  <!--<Defection.letterText>A colonist has become so socially isolated that they have decided to leave for another faction.</Defection.letterText>-->
+  <!--<Defection.letterLabel>Defection!</Defection.letterLabel>-->
+  <!--<MadWithLoneliness.label>mad with loneliness</MadWithLoneliness.label>-->
+  <!--<MadWithLoneliness.letterText>A colonist has had a mental break due to severe social isolation!</MadWithLoneliness.letterText>-->
+  <!--<MadWithLoneliness.letterLabel>Loneliness!</MadWithLoneliness.letterLabel>-->
+  <!--<Brawl.label>angry brawl</Brawl.label>-->
+  <!--<FriendsQuarrel.label>quarrel</FriendsQuarrel.label>-->
 
 </LanguageData>

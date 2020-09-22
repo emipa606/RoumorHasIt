@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <Sentence_MakePeaceFailed.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] did not agree to forgive.</Sentence_MakePeaceFailed.rulePack.rulesStrings.0>
-  <Sentence_MakePeaceSucceeded.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] agreed to let the slight go.</Sentence_MakePeaceSucceeded.rulePack.rulesStrings.0>
-  <Sentence_ApologyFailed.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] did not accept the apology.</Sentence_ApologyFailed.rulePack.rulesStrings.0>
-  <Sentence_ApologySucceeded.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] accepted the apology.</Sentence_ApologySucceeded.rulePack.rulesStrings.0>
-  <Sentence_ApologySucceededBig.rulePack.rulesStrings.0>sent->The apology was heartfelt, and brought [RECIPIENT_nameDef] and [INITIATOR_nameDef] closer together.</Sentence_ApologySucceededBig.rulePack.rulesStrings.0>
-  <Sentence_CC_Colonist.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of colonial cultures.</Sentence_CC_Colonist.rulePack.rulesStrings.0>
-  <Sentence_CC_Glitterworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of glitterworld cultures.</Sentence_CC_Glitterworld.rulePack.rulesStrings.0>
-  <Sentence_CC_Urbworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of urbworld cultures.</Sentence_CC_Urbworld.rulePack.rulesStrings.0>
-  <Sentence_CC_Tribal.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of tribal cultures.</Sentence_CC_Tribal.rulePack.rulesStrings.0>
-  <Sentence_CC_Midworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of midworld cultures.</Sentence_CC_Midworld.rulePack.rulesStrings.0>
-  <Sentence_CC_Imperial.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of imperial cultures.</Sentence_CC_Imperial.rulePack.rulesStrings.0>
-
+  <!--<Sentence_MakePeaceFailed.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] did not agree to forgive.</Sentence_MakePeaceFailed.rulePack.rulesStrings.0>-->
+  <!--<Sentence_MakePeaceSucceeded.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] agreed to let the slight go.</Sentence_MakePeaceSucceeded.rulePack.rulesStrings.0>-->
+  <!--<Sentence_ApologyFailed.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] did not accept the apology.</Sentence_ApologyFailed.rulePack.rulesStrings.0>-->
+  <!--<Sentence_ApologySucceeded.rulePack.rulesStrings.0>sent->[RECIPIENT_nameDef] accepted the apology.</Sentence_ApologySucceeded.rulePack.rulesStrings.0>-->
+  <!--<Sentence_ApologySucceededBig.rulePack.rulesStrings.0>sent->The apology was heartfelt, and brought [RECIPIENT_nameDef] and [INITIATOR_nameDef] closer together.</Sentence_ApologySucceededBig.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Colonist.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of colonial cultures.</Sentence_CC_Colonist.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Glitterworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of glitterworld cultures.</Sentence_CC_Glitterworld.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Urbworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of urbworld cultures.</Sentence_CC_Urbworld.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Tribal.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of tribal cultures.</Sentence_CC_Tribal.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Midworld.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of midworld cultures.</Sentence_CC_Midworld.rulePack.rulesStrings.0>-->
+  <!--<Sentence_CC_Imperial.rulePack.rulesStrings.0>sent->as [INITIATOR_nameDef] has a poor understanding of imperial cultures.</Sentence_CC_Imperial.rulePack.rulesStrings.0>-->
 
 </LanguageData>

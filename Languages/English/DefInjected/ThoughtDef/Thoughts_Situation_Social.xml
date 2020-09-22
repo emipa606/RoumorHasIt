@@ -1,29 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <LanguageData>
-
-  <TrustworthyVsGossip.stages.0.label>trustworthy vs gossip</TrustworthyVsGossip.stages.0.label>
-
-  <DividedColony.stages.0.label>divided colony</DividedColony.stages.0.label>
-  <DividedColony.stages.0.description>This stupid feud is damaging the colony!</DividedColony.stages.0.description>
-
-  <EveryoneGetsOn.stages.0.label>good relationships</EveryoneGetsOn.stages.0.label>
-  <EveryoneGetsOn.stages.0.description>All my relationships here are positive and constructive.</EveryoneGetsOn.stages.0.description>
-  <EveryoneGetsOn.stages.1.label>great relationships</EveryoneGetsOn.stages.1.label>
-  <EveryoneGetsOn.stages.1.description>I couldn't imagine a better group of people to be with!</EveryoneGetsOn.stages.1.description>
-
-  <EveryoneHatesMeColony.stages.0.label>I don't have a single friend in this colony.</EveryoneHatesMeColony.stages.0.label>
-  <EveryoneHatesMeColony.stages.0.description>No one here likes me!</EveryoneHatesMeColony.stages.0.description>
-
-  <EveryoneHatesMeCaravan.stages.0.label>Everyone in the caravan hates me!</EveryoneHatesMeCaravan.stages.0.label>
-  <EveryoneHatesMeCaravan.stages.0.description>No one here likes me!</EveryoneHatesMeCaravan.stages.0.description>
-
-  <RunAwayThought.stages.0.label>Defecting to another faction.</RunAwayThought.stages.0.label>
-  <AnnoyingVoiceAmeliorated.stages.0.label>annoying voice</AnnoyingVoiceAmeliorated.stages.0.label>
-  <CreepyBreathingAmeliorated.stages.0.label>creepy breathing</CreepyBreathingAmeliorated.stages.0.label>
-  <DisfiguredAmeliorated.stages.0.label>disfigured</DisfiguredAmeliorated.stages.0.label>
-
-  <UglyAmeliorated.stages.0.label>ugly</UglyAmeliorated.stages.0.label>
-  <UglyAmeliorated.stages.1.label>staggeringly ugly</UglyAmeliorated.stages.1.label>
-
+  <!--<TrustworthyVsGossip.stages.0.label>trustworthy vs gossip</TrustworthyVsGossip.stages.0.label>-->
+  <!--<DividedColony.stages.0.label>divided colony</DividedColony.stages.0.label>-->
+  <!--<DividedColony.stages.0.description>This stupid feud is damaging the colony!</DividedColony.stages.0.description>-->
+  <!--<EveryoneGetsOn.stages.0.label>good relationships</EveryoneGetsOn.stages.0.label>-->
+  <!--<EveryoneGetsOn.stages.0.description>All my relationships here are positive and constructive.</EveryoneGetsOn.stages.0.description>-->
+  <!--<EveryoneGetsOn.stages.1.label>great relationships</EveryoneGetsOn.stages.1.label>-->
+  <!--<EveryoneGetsOn.stages.1.description>I couldn't imagine a better group of people to be with!</EveryoneGetsOn.stages.1.description>-->
+  <!--<EveryoneHatesMeColony.stages.0.label>I don't have a single friend in this colony.</EveryoneHatesMeColony.stages.0.label>-->
+  <!--<EveryoneHatesMeColony.stages.0.description>No one here likes me!</EveryoneHatesMeColony.stages.0.description>-->
+  <!--<EveryoneHatesMeCaravan.stages.0.label>Everyone in the caravan hates me!</EveryoneHatesMeCaravan.stages.0.label>-->
+  <!--<EveryoneHatesMeCaravan.stages.0.description>No one here likes me!</EveryoneHatesMeCaravan.stages.0.description>-->
+  <!--<RunAwayThought.stages.0.label>Defecting to another faction.</RunAwayThought.stages.0.label>-->
+  <!--<AnnoyingVoiceAmeliorated.stages.0.label>annoying voice</AnnoyingVoiceAmeliorated.stages.0.label>-->
+  <!--<CreepyBreathingAmeliorated.stages.0.label>creepy breathing</CreepyBreathingAmeliorated.stages.0.label>-->
+  <!--<DisfiguredAmeliorated.stages.0.label>disfigured</DisfiguredAmeliorated.stages.0.label>-->
+  <!--<UglyAmeliorated.stages.0.label>ugly</UglyAmeliorated.stages.0.label>-->
+  <!--<UglyAmeliorated.stages.1.label>staggeringly ugly</UglyAmeliorated.stages.1.label>-->
 
 </LanguageData>
