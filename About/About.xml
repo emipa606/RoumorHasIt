@@ -10,28 +10,37 @@
     <li>1.2</li>
   </supportedVersions>
   <modDependencies />
-  <loadAfter />
-  <description>Update of Rainbeau Flambes mod
-https://steamcommunity.com/sharedfiles/filedetails/?id=1584224458
+  <loadAfter>
+    <li>syrchalis.traitvalue</li>
+  </loadAfter>
+  <description>[img]https://i.imgur.com/WAEzk68.png[/img]
+Update of Rainbeau Flambes mod
+https://steamcommunity.com/sharedfiles/filedetails/?id=1554149030
 
-Support-chat:
-https://invite.gg/Mlie
+- Added support for [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value[/url]
+
+[img]https://i.imgur.com/7Gzt3Rg.png[/img]
+
+[table]
+	[tr]
+		[td][url=https://invite.gg/Mlie][img]https://i.imgur.com/zdzzBrc.png[/img][/url][/td]
+		[td][url=https://github.com/emipa606/RoumorHasIt][img]https://i.imgur.com/kTkpTOE.png[/img][/url][/td]
+	[/tr]
+[/table]
 	
---- Original Description ---
+[img]https://i.imgur.com/NOW7jU1.png[/img]
 
-Have you ever wondered why your pawns don't talk about each other? 
+[b]Have you ever wondered why your pawns don't talk about each other? 
 
 Did no one wonder about sending that shifty cannibal Alex to bury the dead? How come Ray likes the abrasive psychopath who beat up her friend, just because she's never been insulted directly? And why is no one ever apologetic about anything they've done?
 
 If you want more social complexity, or just enjoy gossip and intrigue in your stories, then look no further! "Rumor Has It" -- an update of SeveralPuffins' popular but sadly abandoned a17 mod, "Rumours and Deception" -- adds new social interactions, traits and thoughts that largely focus on people talking about people.
 
-- Rainbeau Flambe (dburgdorf)
+- Rainbeau Flambe (dburgdorf)[/b]
 
-=====
-
-What It Adds:
+[h1][b][u]What It Adds:[/u][/b][/h1]
  
-(1) New Interactions!
+[i](1) New Interactions![/i]
 
 - Chat About Other Pawns: Alice likes Bob. Bob hates Carol. Bob can now tell Alice this!
 
@@ -49,7 +58,7 @@ What It Adds:
 
 - Culture Clash: Not all insults are intended! One pawn may insult another due to having a poor understanding of the other's cultural background. (Would you really expect a tribal pawn, for example, to understand glitterworld cultures?)
 
-(2) New Traits!
+[i](2) New Traits![/i]
 
 - Compulsive Liar: Pawns with this trait just can't help themselves. Every conversation is an opportunity to make up some new, snide story about someone else.
 
@@ -63,7 +72,7 @@ What It Adds:
 
 - Trustworthy: Trustworthy pawns keep secrets. They rarely spread rumors, and if they do, they feel terrible about it.
 
-(3) New Events!
+[i](3) New Events![/i]
 
 - Defection: Socially isolated pawns will suffer mood penalties and very regular mental breaks. If they remain friendless, they may, occasionally, walk off the map and join an ally.
 
@@ -73,35 +82,40 @@ What It Adds:
 
 NOTE: All of these events can be switched off in the mod's "Options" menu, but not entirely without consequence. Divided colonies, after all, are unhappy colonies.
 
-(4) Negative Traits are Ameliorated for Those Who Share Them!
+[i](4) Negative Traits are Ameliorated for Those Who Share Them![/i]
 
 The negative impact of the Annoying Voice, Creepy Breathing, Disfigured, and Ugly traits is reduced for pawns who have any of those traits themselves. (This was originally a feature in SeveralPuffins' "Romance Diversified" mod, but I think it fits better here, in a mod that primarily focuses on what pawns think of each other.)
 
-=====
-
-Compatibility:
+[h1][b][u]Compatibility:[/u][/b][/h1]
 
 "Rumor Has It" can safely be added to a game in progress. Removing it from a game in progress, however, could create problems.
 
 This mod should be compatible with "Psychology," though you might notice that some traits or incidents overlap conceptually.
 
-=====
-
-Credits:
+[h1][b][u]Credits:[/u][/b][/h1]
 
 Obviously, "Rumor Has It" owes a great deal to SeveralPuffins' "Rumours and Deception," inasmuch as it's pretty much just a direct update of that mod.
 
 The "Quarrel" incident is taken from Linq/Word-Mule's "Expanded Incidents" mod.
 
-=====
-
-License:
+[h1][b][u]License:[/u][/b][/h1]
 
 If you're a modpack maker and want to include "Rumor Has It" in your pack, or if you're a modder and want to use it as the basis of a derivative mod, please feel free to do so. I ask only that you let me know about it, and that you credit both me and SeveralPuffins. 
 
-=====
+[h1][i]The Ludeon forums discussion thread for my mods can be found [url=https://ludeon.com/forums/index.php?topic=46165]here[/url].
 
 If you have any (helpful) suggestions for improvement, please let me know!
 
-	</description>
+
+[img]https://i.imgur.com/Rs6T6cr.png[/img]
+[list]
+[*] See if the the error persists if you just have this mod and its requirements active.
+[*] If not, try adding your other mods until it happens again.
+[*] Post your error-log using [url=https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib[/url] and command Ctrl+F12
+[*] For best support, please use the Discord-channel for error-reporting.
+[*] Do not report errors by making a discussion-thread, I get no notification of that.
+[*] If you have the solution for a problem, please post it to the GitHub repository.
+[/list]
+</description>
 </ModMetaData>
+
