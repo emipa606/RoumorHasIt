@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ModMetaData>
   <name>[RF] Rumor Has It.... (Continued)</name>
   <packageId>Mlie.RFRumorHasIt</packageId>
@@ -8,6 +8,7 @@
     <li>1.0</li>
     <li>1.1</li>
     <li>1.2</li>
+    <li>1.3</li>
   </supportedVersions>
   <modDependencies />
   <loadAfter>
@@ -30,11 +31,11 @@ https://steamcommunity.com/sharedfiles/filedetails/?id=1554149030
 	
 [img]https://i.imgur.com/NOW7jU1.png[/img]
 
-[b]Have you ever wondered why your pawns don't talk about each other? 
+[b]Have you ever wondered why your pawns don&apos;t talk about each other? 
 
-Did no one wonder about sending that shifty cannibal Alex to bury the dead? How come Ray likes the abrasive psychopath who beat up her friend, just because she's never been insulted directly? And why is no one ever apologetic about anything they've done?
+Did no one wonder about sending that shifty cannibal Alex to bury the dead? How come Ray likes the abrasive psychopath who beat up her friend, just because she&apos;s never been insulted directly? And why is no one ever apologetic about anything they&apos;ve done?
 
-If you want more social complexity, or just enjoy gossip and intrigue in your stories, then look no further! "Rumor Has It" -- an update of SeveralPuffins' popular but sadly abandoned a17 mod, "Rumours and Deception" -- adds new social interactions, traits and thoughts that largely focus on people talking about people.
+If you want more social complexity, or just enjoy gossip and intrigue in your stories, then look no further! &quot;Rumor Has It&quot; -- an update of SeveralPuffins&apos; popular but sadly abandoned a17 mod, &quot;Rumours and Deception&quot; -- adds new social interactions, traits and thoughts that largely focus on people talking about people.
 
 - Rainbeau Flambe (dburgdorf)[/b]
 
@@ -50,25 +51,25 @@ If you want more social complexity, or just enjoy gossip and intrigue in your st
 
 - Share Secret: A pawn can trust another enough to reveal something deep and personal, bringing them closer together.
 
-- Reveal Secret: There's no guarantee that all trust is well placed! Pawns who have been told a secret can go and gossip about it to their friends!
+- Reveal Secret: There&apos;s no guarantee that all trust is well placed! Pawns who have been told a secret can go and gossip about it to their friends!
 
-- Apologize: Pawns can try to make up with others that they've insulted or hurt.
+- Apologize: Pawns can try to make up with others that they&apos;ve insulted or hurt.
 
 - Make Peace: Pawns may try and apologize on behalf of a third party.
 
-- Culture Clash: Not all insults are intended! One pawn may insult another due to having a poor understanding of the other's cultural background. (Would you really expect a tribal pawn, for example, to understand glitterworld cultures?)
+- Culture Clash: Not all insults are intended! One pawn may insult another due to having a poor understanding of the other&apos;s cultural background. (Would you really expect a tribal pawn, for example, to understand glitterworld cultures?)
 
 [i](2) New Traits![/i]
 
-- Compulsive Liar: Pawns with this trait just can't help themselves. Every conversation is an opportunity to make up some new, snide story about someone else.
+- Compulsive Liar: Pawns with this trait just can&apos;t help themselves. Every conversation is an opportunity to make up some new, snide story about someone else.
 
-- Gossip: Gossips talk about other people all the time. This extends to secrets, with which they simply can't be trusted.
+- Gossip: Gossips talk about other people all the time. This extends to secrets, with which they simply can&apos;t be trusted.
 
 - Gushing: Some pawns just cannot judge who to trust with their darkest secrets, exposing themselves to potential embarrassment.
 
 - Manipulative: Pawns with this trait will use any social trick they know to make other people see things their way. They are great negotiators, but can be divisive and isolating within a colony.
 
-- Peacemaker: Some pawns just can't stand to see their friends fighting. They will try to resolve other people's differences, and will get a mood boost if successful.
+- Peacemaker: Some pawns just can&apos;t stand to see their friends fighting. They will try to resolve other people&apos;s differences, and will get a mood boost if successful.
 
 - Trustworthy: Trustworthy pawns keep secrets. They rarely spread rumors, and if they do, they feel terrible about it.
 
@@ -76,33 +77,34 @@ If you want more social complexity, or just enjoy gossip and intrigue in your st
 
 - Defection: Socially isolated pawns will suffer mood penalties and very regular mental breaks. If they remain friendless, they may, occasionally, walk off the map and join an ally.
 
-- Splinter: In the unlikely event that a clique of friends forms within the colony that is largely hostile to its other members, they may choose to leave together and form a new map faction. They will take some of the colony's belongings with them as they go. 
+- Splinter: In the unlikely event that a clique of friends forms within the colony that is largely hostile to its other members, they may choose to leave together and form a new map faction. They will take some of the colony&apos;s belongings with them as they go. 
 
-- Brawl:  Even if they don't leave, hostile cliques will start fights. Unless you patch up your fractured colony, mass brawls will break out. 
+- Brawl:  Even if they don&apos;t leave, hostile cliques will start fights. Unless you patch up your fractured colony, mass brawls will break out. 
 
-NOTE: All of these events can be switched off in the mod's "Options" menu, but not entirely without consequence. Divided colonies, after all, are unhappy colonies.
+NOTE: All of these events can be switched off in the mod&apos;s &quot;Options&quot; menu, but not entirely without consequence. Divided colonies, after all, are unhappy colonies.
 
 [i](4) Negative Traits are Ameliorated for Those Who Share Them![/i]
 
-The negative impact of the Annoying Voice, Creepy Breathing, Disfigured, and Ugly traits is reduced for pawns who have any of those traits themselves. (This was originally a feature in SeveralPuffins' "Romance Diversified" mod, but I think it fits better here, in a mod that primarily focuses on what pawns think of each other.)
+The negative impact of the Annoying Voice, Creepy Breathing, Disfigured, and Ugly traits is reduced for pawns who have any of those traits themselves. (This was originally a feature in SeveralPuffins&apos; &quot;Romance Diversified&quot; mod, but I think it fits better here, in a mod that primarily focuses on what pawns think of each other.)
 
 [h1][b][u]Compatibility:[/u][/b][/h1]
 
-"Rumor Has It" can safely be added to a game in progress. Removing it from a game in progress, however, could create problems.
+&quot;Rumor Has It&quot; can safely be added to a game in progress. Removing it from a game in progress, however, could create problems.
 
-This mod should be compatible with "Psychology," though you might notice that some traits or incidents overlap conceptually.
+This mod should be compatible with &quot;Psychology,&quot; though you might notice that some traits or incidents overlap conceptually.
 
 [h1][b][u]Credits:[/u][/b][/h1]
 
-Obviously, "Rumor Has It" owes a great deal to SeveralPuffins' "Rumours and Deception," inasmuch as it's pretty much just a direct update of that mod.
+Obviously, &quot;Rumor Has It&quot; owes a great deal to SeveralPuffins&apos; &quot;Rumours and Deception,&quot; inasmuch as it&apos;s pretty much just a direct update of that mod.
 
-The "Quarrel" incident is taken from Linq/Word-Mule's "Expanded Incidents" mod.
+The &quot;Quarrel&quot; incident is taken from Linq/Word-Mule&apos;s &quot;Expanded Incidents&quot; mod.
 
 [h1][b][u]License:[/u][/b][/h1]
 
-If you're a modpack maker and want to include "Rumor Has It" in your pack, or if you're a modder and want to use it as the basis of a derivative mod, please feel free to do so. I ask only that you let me know about it, and that you credit both me and SeveralPuffins. 
+If you&apos;re a modpack maker and want to include &quot;Rumor Has It&quot; in your pack, or if you&apos;re a modder and want to use it as the basis of a derivative mod, please feel free to do so. I ask only that you let me know about it, and that you credit both me and SeveralPuffins. 
 
-[h1][i]The Ludeon forums discussion thread for my mods can be found [url=https://ludeon.com/forums/index.php?topic=46165]here[/url].
+[i]The Ludeon forums discussion thread for my mods can be found [url=https://ludeon.com/forums/index.php?topic=46165]here[/url].
+[/i]
 
 If you have any (helpful) suggestions for improvement, please let me know!
 
@@ -116,6 +118,6 @@ If you have any (helpful) suggestions for improvement, please let me know!
 [*] Do not report errors by making a discussion-thread, I get no notification of that.
 [*] If you have the solution for a problem, please post it to the GitHub repository.
 [/list]
+
 </description>
 </ModMetaData>
-
