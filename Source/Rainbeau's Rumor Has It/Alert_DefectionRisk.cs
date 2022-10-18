@@ -4,94 +4,93 @@ using System.Linq;
 using RimWorld;
 using Verse;
 
-namespace Rumor_Code
+namespace Rumor_Code;
+
+public class Alert_DefectionRisk : Alert
 {
-    public class Alert_DefectionRisk : Alert
+    private IEnumerable<Pawn> DefectionRiskPawns =>
+        from p in ThirdPartyManager.GetAllFreeColonistsAlive
+        where ThirdPartyManager.DoesEveryoneLocallyHate(p)
+        select p;
+
+    public override AlertReport GetReport()
     {
-        private IEnumerable<Pawn> DefectionRiskPawns =>
-            from p in ThirdPartyManager.GetAllFreeColonistsAlive
-            where ThirdPartyManager.DoesEveryoneLocallyHate(p)
-            select p;
-
-        public override AlertReport GetReport()
+        var getAllFreeColonistsAlive = ThirdPartyManager.GetAllFreeColonistsAlive;
+        AlertReport result;
+        if (!getAllFreeColonistsAlive.Any())
         {
-            var getAllFreeColonistsAlive = ThirdPartyManager.GetAllFreeColonistsAlive;
-            AlertReport result;
-            if (!getAllFreeColonistsAlive.Any())
-            {
-                result = false;
-            }
-            else
-            {
-                var pawn = getAllFreeColonistsAlive.FirstOrDefault();
+            result = false;
+        }
+        else
+        {
+            var pawn = getAllFreeColonistsAlive.FirstOrDefault();
 
-                try
+            try
+            {
+                foreach (var current in getAllFreeColonistsAlive.ToList())
                 {
-                    foreach (var current in getAllFreeColonistsAlive.ToList())
+                    if (!ThirdPartyManager.DoesEveryoneLocallyHate(current))
                     {
-                        if (!ThirdPartyManager.DoesEveryoneLocallyHate(current))
-                        {
-                            continue;
-                        }
-
-                        result = AlertReport.CulpritIs(current);
-                        return result;
+                        continue;
                     }
-                }
-                catch (InvalidOperationException)
-                {
-                    result = AlertReport.CulpritIs(pawn);
+
+                    result = AlertReport.CulpritIs(current);
                     return result;
                 }
-
-                result = false;
             }
-
-            return result;
-        }
-
-        public override TaggedString GetExplanation()
-        {
-            TaggedString text;
-            if (Controller.Settings.allowDefections.Equals(true))
+            catch (InvalidOperationException)
             {
-                text = "RUMOR.DefectionRiskMsg".Translate();
-                try
-                {
-                    foreach (var current in DefectionRiskPawns.ToList())
-                    {
-                        text = text + "\n     " + current.NameShortColored;
-                    }
-                }
-                catch (InvalidOperationException)
-                {
-                }
-            }
-            else
-            {
-                text = "RUMOR.SocialIsolationMsg".Translate();
-                try
-                {
-                    foreach (var current2 in DefectionRiskPawns.ToList())
-                    {
-                        text = text + "\n     " + current2.NameShortColored;
-                    }
-                }
-                catch (InvalidOperationException)
-                {
-                }
+                result = AlertReport.CulpritIs(pawn);
+                return result;
             }
 
-            return text;
+            result = false;
         }
 
-        public override string GetLabel()
+        return result;
+    }
+
+    public override TaggedString GetExplanation()
+    {
+        TaggedString text;
+        if (Controller.Settings.allowDefections.Equals(true))
         {
-            string result = Controller.Settings.allowDefections.Equals(true)
-                ? "RUMOR.DefectionRisk".Translate()
-                : "RUMOR.SocialIsolation".Translate();
-
-            return result;
+            text = "RUMOR.DefectionRiskMsg".Translate();
+            try
+            {
+                foreach (var current in DefectionRiskPawns.ToList())
+                {
+                    text = text + "\n     " + current.NameShortColored;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+            }
         }
+        else
+        {
+            text = "RUMOR.SocialIsolationMsg".Translate();
+            try
+            {
+                foreach (var current2 in DefectionRiskPawns.ToList())
+                {
+                    text = text + "\n     " + current2.NameShortColored;
+                }
+            }
+            catch (InvalidOperationException)
+            {
+            }
+        }
+
+        return text;
+    }
+
+    public override string GetLabel()
+    {
+        string result = Controller.Settings.allowDefections.Equals(true)
+            ? "RUMOR.DefectionRisk".Translate()
+            : "RUMOR.SocialIsolation".Translate();
+
+        return result;
     }
 }

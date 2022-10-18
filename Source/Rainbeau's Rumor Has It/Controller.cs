@@ -1,25 +1,28 @@
-﻿using UnityEngine;
+﻿using Mlie;
+using UnityEngine;
 using Verse;
 
-namespace Rumor_Code
+namespace Rumor_Code;
+
+public class Controller : Mod
 {
-    public class Controller : Mod
+    public static Settings Settings;
+    public static string currentVersion;
+
+    public Controller(ModContentPack content) : base(content)
     {
-        public static Settings Settings;
+        Settings = GetSettings<Settings>();
+        currentVersion =
+            VersionFromManifest.GetVersionFromModMetaData(ModLister.GetActiveModWithIdentifier("Mlie.RFRumorHasIt"));
+    }
 
-        public Controller(ModContentPack content) : base(content)
-        {
-            Settings = GetSettings<Settings>();
-        }
+    public override string SettingsCategory()
+    {
+        return "RUMOR.RumorHasIt".Translate();
+    }
 
-        public override string SettingsCategory()
-        {
-            return "RUMOR.RumorHasIt".Translate();
-        }
-
-        public override void DoSettingsWindowContents(Rect canvas)
-        {
-            Settings.DoWindowContents(canvas);
-        }
+    public override void DoSettingsWindowContents(Rect canvas)
+    {
+        Settings.DoWindowContents(canvas);
     }
 }

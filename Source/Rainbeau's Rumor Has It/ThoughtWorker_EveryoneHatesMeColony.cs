@@ -2,39 +2,37 @@
 using RimWorld;
 using Verse;
 
-namespace Rumor_Code
-{
-    public class ThoughtWorker_EveryoneHatesMeColony : ThoughtWorker
-    {
-        protected override ThoughtState CurrentStateInternal(Pawn p)
-        {
-            ThoughtState result;
-            if (!p.Spawned)
-            {
-                result = ThoughtState.Inactive;
-            }
-            else if (!p.RaceProps.Humanlike)
-            {
-                result = ThoughtState.Inactive;
-            }
-            else if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 3)
-            {
-                result = ThoughtState.Inactive;
-            }
-            else if (!ThirdPartyManager.DoesEveryoneLocallyHate(p))
-            {
-                result = ThoughtState.Inactive;
-            }
-            else if (p.Map != null && p.Map.ParentFaction == p.Faction)
-            {
-                result = ThoughtState.ActiveAtStage(0);
-            }
-            else
-            {
-                result = ThoughtState.Inactive;
-            }
+namespace Rumor_Code;
 
-            return result;
+public class ThoughtWorker_EveryoneHatesMeColony : ThoughtWorker
+{
+    protected override ThoughtState CurrentStateInternal(Pawn p)
+    {
+        if (!p.Spawned)
+        {
+            return ThoughtState.Inactive;
         }
+
+        if (!p.RaceProps.Humanlike)
+        {
+            return ThoughtState.Inactive;
+        }
+
+        if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 3)
+        {
+            return ThoughtState.Inactive;
+        }
+
+        if (!ThirdPartyManager.DoesEveryoneLocallyHate(p))
+        {
+            return ThoughtState.Inactive;
+        }
+
+        if (p.Map != null && p.Map.ParentFaction == p.Faction)
+        {
+            return ThoughtState.ActiveAtStage(0);
+        }
+
+        return ThoughtState.Inactive;
     }
 }

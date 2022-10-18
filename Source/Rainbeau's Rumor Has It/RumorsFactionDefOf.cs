@@ -1,10 +1,9 @@
 ﻿using RimWorld;
 
-namespace Rumor_Code
+namespace Rumor_Code;
+
+[DefOf]
+public static class RumorsFactionDefOf
 {
-    [DefOf]
-    public static class RumorsFactionDefOf
-    {
-        public static FactionDef SplinterColony;
-    }
+    public static FactionDef SplinterColony;
 }
