@@ -1,5 +1,8 @@
 # Changelog for RoumorHasIt
 
+1.4.2 - Hopefully fixed an enumeration error
+
+
 1.4.1 - Mod updated for 1.4 and passed autotests.
 Used DeepL to update translations for ChineseSimplified, French, German, Russian
 

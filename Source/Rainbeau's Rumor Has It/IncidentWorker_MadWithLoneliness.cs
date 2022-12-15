@@ -29,15 +29,14 @@ public class IncidentWorker_MadWithLoneliness : IncidentWorker
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        var enumerable = from x in ThirdPartyManager.GetAllFreeColonistsAlive
-            where ThirdPartyManager.DoesEveryoneLocallyHate(x)
-            select x;
-        if (!enumerable.Any())
+        var pawns = ThirdPartyManager.GetAllFreeColonistsAlive.Where(ThirdPartyManager.DoesEveryoneLocallyHate);
+        if (!pawns.Any())
         {
             return false;
         }
 
-        var pawn = enumerable.RandomElement();
+        var pawn = pawns.RandomElement();
+
         if (pawn == null)
         {
             return false;
