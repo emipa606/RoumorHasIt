@@ -19,7 +19,8 @@ public class IncidentWorker_MadWithLoneliness : IncidentWorker
         }
         else if (p.story.traits.HasTrait(TraitDefOf.DrugDesire))
         {
-            p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Binging_DrugExtreme);
+            p.mindState.mentalStateHandler.TryStartMentalState(
+                DefDatabase<MentalStateDef>.GetNamedSilentFail("Binging_DrugExtreme"));
         }
         else
         {

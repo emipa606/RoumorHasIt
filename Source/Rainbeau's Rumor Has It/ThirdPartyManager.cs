@@ -12,7 +12,7 @@ public static class ThirdPartyManager
     public static int iLevel = 0;
     public static bool first = true;
 
-    public static Dictionary<Map, List<ICollection<Pawn>>> cliqueDict =
+    public static readonly Dictionary<Map, List<ICollection<Pawn>>> cliqueDict =
         new Dictionary<Map, List<ICollection<Pawn>>>();
 
     public static IEnumerable<Map> GetAllMapsContainingFreeSpawnedColonists =>
@@ -110,7 +110,7 @@ public static class ThirdPartyManager
         {
             var list = m.mapPawns.FreeColonistsSpawned.ToList();
             var list2 = new List<ICollection<Pawn>>();
-            var unused = 0.667f * list.Count;
+            _ = 0.667f * list.Count;
             BKA(list2, new List<Pawn>(), list, new List<Pawn>());
             if (list2.Count == 0)
             {
@@ -148,12 +148,12 @@ public static class ThirdPartyManager
             {
                 foreach (var current2 in list2)
                 {
-                    if (!dictionary.ContainsKey(current))
+                    if (!dictionary.TryGetValue(current, out var pawns))
                     {
                         continue;
                     }
 
-                    if (!Equals(current2, dictionary[current]) && current2.Contains(current))
+                    if (!Equals(current2, pawns) && current2.Contains(current))
                     {
                         current2.Remove(current);
                     }

@@ -14,9 +14,6 @@ public class Alert_Cliques : Alert
             {
                 var current = enumerator.Current;
                 var isolatedCliques = current.GetIsolatedCliques(-5);
-                if (isolatedCliques == null)
-                {
-                }
 
                 if (isolatedCliques == null || isolatedCliques.Count == 0)
                 {

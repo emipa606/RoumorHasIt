@@ -2,13 +2,9 @@
 
 namespace Rumor_Code;
 
-public class Watcher : MapComponent
+public class Watcher(Map map) : MapComponent(map)
 {
     private int currentTick;
-
-    public Watcher(Map map) : base(map)
-    {
-    }
 
     public override void MapComponentTick()
     {

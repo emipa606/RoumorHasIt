@@ -22,7 +22,7 @@ public class ThoughtWorker_UglyAmeliorated : ThoughtWorker
             return false;
         }
 
-        var num = other.story.traits.DegreeOfTrait(TraitDefOf.Beauty);
+        var num = other.story.traits.DegreeOfTrait(TraitDef.Named("Beauty"));
         switch (num)
         {
             case -1:

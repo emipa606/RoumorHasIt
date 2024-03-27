@@ -20,7 +20,7 @@ public class InteractionWorker_MakePeace : InteractionWorker
             num *= 10f;
         }
 
-        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.Insulted);
+        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDef.Named("Insulted"));
         enumerable = enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HarmedMe));
         enumerable =
             enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HadAngeringFight));
@@ -40,7 +40,7 @@ public class InteractionWorker_MakePeace : InteractionWorker
         letterText = null;
         letterDef = null;
         lookTargets = null;
-        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.Insulted);
+        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDef.Named("Insulted"));
         enumerable = enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HarmedMe));
         enumerable =
             enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HadAngeringFight));

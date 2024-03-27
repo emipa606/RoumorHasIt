@@ -19,14 +19,14 @@ public class InteractionWorker_SharedSecret : InteractionWorker
             new CurvePoint(2f, 3f)
         };
         NormalCompatibilityCurve = simpleCurve;
-        simpleCurve = new SimpleCurve
-        {
+        simpleCurve =
+        [
             new CurvePoint(-1.5f, 1.1f),
             new CurvePoint(-0.5f, 1.5f),
             new CurvePoint(0.5f, 1.8f),
             new CurvePoint(1f, 2f),
             new CurvePoint(2f, 3f)
-        };
+        ];
         SharersCompatibilityCurve = simpleCurve;
     }
 

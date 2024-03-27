@@ -15,7 +15,7 @@ public class InteractionWorker_Apologize : InteractionWorker
         }
 
         var num = 10f;
-        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.Insulted);
+        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDef.Named("Insulted"));
         enumerable = enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HarmedMe));
         enumerable =
             enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HadAngeringFight));
@@ -36,7 +36,7 @@ public class InteractionWorker_Apologize : InteractionWorker
         letterText = null;
         letterDef = null;
         lookTargets = null;
-        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.Insulted);
+        var enumerable = ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDef.Named("Insulted"));
         enumerable = enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HarmedMe));
         enumerable =
             enumerable.Concat(ThirdPartyManager.GetMemoriesWithDef(recipient, ThoughtDefOf.HadAngeringFight));
@@ -66,7 +66,7 @@ public class InteractionWorker_Apologize : InteractionWorker
                 extraSentencePacks.Add(RumorsRulePackDefOf.Sentence_ApologySucceededBig);
                 recipient.needs.mood.thoughts.memories.RemoveMemory(thought_MemorySocial);
                 recipient.needs.mood.thoughts.memories.TryGainMemory(RumorsThoughtDefOf.ApologizedToBig, initiator);
-                initiator.needs.mood.thoughts.memories.TryGainMemory(ThoughtDefOf.RapportBuilt, recipient);
+                initiator.needs.mood.thoughts.memories.TryGainMemory(ThoughtDef.Named("RapportBuilt"), recipient);
                 break;
         }
     }
