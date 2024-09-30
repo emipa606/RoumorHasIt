@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Manifest>
   <identifier>RoumorHasIt</identifier>
-  <version>1.5.1</version>
+  <version>1.5.2</version>
   <dependencies />
   <incompatibleWith />
   <loadBefore />
   <loadAfter />
-  <manifestUri>https://raw.githubusercontent.com/emipa606/RFRumorHasIt/master/About/Manifest.xml</manifestUri>
-  <downloadUri>https://github.com/emipa606/RFRumorHasIt/releases</downloadUri>
+  <manifestUri>https://raw.githubusercontent.com/emipa606/RoumorHasIt/main/About/Manifest.xml</manifestUri>
+  <downloadUri>https://github.com/emipa606/RoumorHasIt/releases</downloadUri>
 </Manifest>
+

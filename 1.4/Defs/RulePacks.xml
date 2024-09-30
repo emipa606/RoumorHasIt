@@ -1,10 +1,10 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <RulePackDef>
     <defName>Sentence_MakePeaceFailed</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;[RECIPIENT_nameDef] did not agree to forgive.</li>
+        <li>sent->[RECIPIENT_nameDef] did not agree to forgive.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -12,7 +12,7 @@
     <defName>Sentence_MakePeaceSucceeded</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;[RECIPIENT_nameDef] agreed to let the slight go.</li>
+        <li>sent->[RECIPIENT_nameDef] agreed to let the slight go.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -20,7 +20,7 @@
     <defName>Sentence_ApologyFailed</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;[RECIPIENT_nameDef] did not accept the apology.</li>
+        <li>sent->[RECIPIENT_nameDef] did not accept the apology.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -28,7 +28,7 @@
     <defName>Sentence_ApologySucceeded</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;[RECIPIENT_nameDef] accepted the apology.</li>
+        <li>sent->[RECIPIENT_nameDef] accepted the apology.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -36,7 +36,7 @@
     <defName>Sentence_ApologySucceededBig</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;The apology was heartfelt, and brought [RECIPIENT_nameDef] and [INITIATOR_nameDef] closer together.</li>
+        <li>sent->The apology was heartfelt, and brought [RECIPIENT_nameDef] and [INITIATOR_nameDef] closer together.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -44,7 +44,7 @@
     <defName>Sentence_CC_Colonist</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of colonial cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of colonial cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -52,7 +52,7 @@
     <defName>Sentence_CC_Glitterworld</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of glitterworld cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of glitterworld cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -60,7 +60,7 @@
     <defName>Sentence_CC_Urbworld</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of urbworld cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of urbworld cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -68,7 +68,7 @@
     <defName>Sentence_CC_Tribal</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of tribal cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of tribal cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -76,7 +76,7 @@
     <defName>Sentence_CC_Midworld</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of midworld cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of midworld cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>
@@ -84,7 +84,7 @@
     <defName>Sentence_CC_Imperial</defName>
     <rulePack>
       <rulesStrings>
-        <li>sent-&gt;as [INITIATOR_nameDef] has a poor understanding of imperial cultures.</li>
+        <li>sent->as [INITIATOR_nameDef] has a poor understanding of imperial cultures.</li>
       </rulesStrings>
     </rulePack>
   </RulePackDef>

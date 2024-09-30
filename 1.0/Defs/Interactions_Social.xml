@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
   <InteractionDef>
     <defName>ChattedAboutSomeone</defName>
@@ -11,7 +11,7 @@
     <recipientThought>Chitchat</recipientThought>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] chatted with [RECIPIENT_nameDef] about the other colonists.</li>
+        <li>r_logentry->[INITIATOR_nameDef] chatted with [RECIPIENT_nameDef] about the other colonists.</li>
       </rulesStrings>
     </logRulesInitiator>
   </InteractionDef>
@@ -24,12 +24,12 @@
     <initiatorXpGainAmount>10</initiatorXpGainAmount>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] apologized to [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] apologized to [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[RECIPIENT_nameDef] was apologized to by [INITIATOR_nameDef].</li>
+        <li>r_logentry->[RECIPIENT_nameDef] was apologized to by [INITIATOR_nameDef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
@@ -42,12 +42,12 @@
     <initiatorXpGainAmount>10</initiatorXpGainAmount>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] tried to convince [RECIPIENT_nameDef] to forgive a slight.</li>
+        <li>r_logentry->[INITIATOR_nameDef] tried to convince [RECIPIENT_nameDef] to forgive a slight.</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[RECIPIENT_nameDef] was asked by [INITIATOR_nameDef] to forgive a slight.</li>
+        <li>r_logentry->[RECIPIENT_nameDef] was asked by [INITIATOR_nameDef] to forgive a slight.</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
@@ -62,12 +62,12 @@
     <recipientThought>ReceivedSecret</recipientThought>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
@@ -80,12 +80,12 @@
     <initiatorXpGainAmount>5</initiatorXpGainAmount>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] revealed another colonist's secret to [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] revealed another colonist's secret to [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[RECIPIENT_nameDef] was told another colonist's secret by [INITIATOR_nameDef].</li>
+        <li>r_logentry->[RECIPIENT_nameDef] was told another colonist's secret by [INITIATOR_nameDef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
@@ -98,12 +98,12 @@
     <initiatorXpGainAmount>10</initiatorXpGainAmount>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] spread a rumor to [RECIPIENT_nameDef].</li>
+        <li>r_logentry->[INITIATOR_nameDef] spread a rumor to [RECIPIENT_nameDef].</li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[RECIPIENT_nameDef] heard a rumor from [INITIATOR_nameDef].</li>
+        <li>r_logentry->[RECIPIENT_nameDef] heard a rumor from [INITIATOR_nameDef].</li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>
@@ -116,12 +116,12 @@
     <recipientThought>Insulted</recipientThought>
     <logRulesInitiator>
       <rulesStrings>
-        <li>r_logentry-&gt;[INITIATOR_nameDef] accidentally insulted [RECIPIENT_nameDef], </li>
+        <li>r_logentry->[INITIATOR_nameDef] accidentally insulted [RECIPIENT_nameDef], </li>
       </rulesStrings>
     </logRulesInitiator>
     <logRulesRecipient>
       <rulesStrings>
-        <li>r_logentry-&gt;[RECIPIENT_nameDef] was insulted by [INITIATOR_nameDef], </li>
+        <li>r_logentry->[RECIPIENT_nameDef] was insulted by [INITIATOR_nameDef], </li>
       </rulesStrings>
     </logRulesRecipient>
   </InteractionDef>

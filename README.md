@@ -1,17 +1,15 @@
-# RoumorHasIt
+# [[RF] Rumor Has It.... (Continued)](https://steamcommunity.com/sharedfiles/filedetails/?id=2013940581)
 
 ![Image](https://i.imgur.com/buuPQel.png)
 
 Update of Rainbeau Flambes mod
 https://steamcommunity.com/sharedfiles/filedetails/?id=1554149030
 
-- Added support for https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814][SYR] Trait Value
+- Added support for [[SYR] Trait Value](https://steamcommunity.com/sharedfiles/filedetails/?id=2451324814)
 
 ![Image](https://i.imgur.com/pufA0kM.png)
-
 	
 ![Image](https://i.imgur.com/Z4GOv8H.png)
-
 
 **Have you ever wondered why your pawns don't talk about each other? 
 
@@ -21,7 +19,7 @@ If you want more social complexity, or just enjoy gossip and intrigue in your st
 
 - Rainbeau Flambe (dburgdorf)**
 
-# **[u]What It Adds:[/u]**
+# **<ins>What It Adds:</ins>**
 
  
 *(1) New Interactions!*
@@ -70,26 +68,26 @@ NOTE: All of these events can be switched off in the mod's "Options" menu, but n
 
 The negative impact of the Annoying Voice, Creepy Breathing, Disfigured, and Ugly traits is reduced for pawns who have any of those traits themselves. (This was originally a feature in SeveralPuffins' "Romance Diversified" mod, but I think it fits better here, in a mod that primarily focuses on what pawns think of each other.)
 
-# **[u]Compatibility:[/u]**
+# **<ins>Compatibility:</ins>**
 
 
 "Rumor Has It" can safely be added to a game in progress. Removing it from a game in progress, however, could create problems.
 
 This mod should be compatible with "Psychology," though you might notice that some traits or incidents overlap conceptually.
 
-# **[u]Credits:[/u]**
+# **<ins>Credits:</ins>**
 
 
 Obviously, "Rumor Has It" owes a great deal to SeveralPuffins' "Rumours and Deception," inasmuch as it's pretty much just a direct update of that mod.
 
 The "Quarrel" incident is taken from Linq/Word-Mule's "Expanded Incidents" mod.
 
-# **[u]License:[/u]**
+# **<ins>License:</ins>**
 
 
 If you're a modpack maker and want to include "Rumor Has It" in your pack, or if you're a modder and want to use it as the basis of a derivative mod, please feel free to do so. I ask only that you let me know about it, and that you credit both me and SeveralPuffins. 
 
-*The Ludeon forums discussion thread for my mods can be found https://ludeon.com/forums/index.php?topic=46165]here.
+*The Ludeon forums discussion thread for my mods can be found [here](https://ludeon.com/forums/index.php?topic=46165).
 *
 
 If you have any (helpful) suggestions for improvement, please let me know!
@@ -101,13 +99,12 @@ If you have any (helpful) suggestions for improvement, please let me know!
 
 -  See if the the error persists if you just have this mod and its requirements active.
 -  If not, try adding your other mods until it happens again.
--  Post your error-log using https://steamcommunity.com/workshop/filedetails/?id=818773962]HugsLib or the standalone https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404]Uploader and command Ctrl+F12
+-  Post your error-log using [HugsLib](https://steamcommunity.com/workshop/filedetails/?id=818773962) or the standalone [Uploader](https://steamcommunity.com/sharedfiles/filedetails/?id=2873415404) and command Ctrl+F12
 -  For best support, please use the Discord-channel for error-reporting.
 -  Do not report errors by making a discussion-thread, I get no notification of that.
 -  If you have the solution for a problem, please post it to the GitHub repository.
--  Use https://github.com/RimSort/RimSort/releases/latest]RimSort to sort your mods
+-  Use [RimSort](https://github.com/RimSort/RimSort/releases/latest) to sort your mods
 
 
 
-https://steamcommunity.com/sharedfiles/filedetails/changelog/2013940581]![Image](https://img.shields.io/github/v/release/emipa606/RoumorHasIt?label=latest%20version&style=plastic&color=9f1111&labelColor=black)
-
+[![Image](https://img.shields.io/github/v/release/emipa606/RoumorHasIt?label=latest%20version&style=plastic&color=9f1111&labelColor=black)](https://steamcommunity.com/sharedfiles/filedetails/changelog/2013940581)
