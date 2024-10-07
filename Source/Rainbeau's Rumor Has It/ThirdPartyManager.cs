@@ -56,10 +56,15 @@ public static class ThirdPartyManager
 
     public static IEnumerable<Pawn> GetAllColonistsLocalTo(Pawn p)
     {
-        return from x in GetAllFreeColonistsAlive
-            where x.RaceProps.Humanlike && x.Faction == Faction.OfPlayer && x != p &&
-                  (x.Map != null && x.Map == p.Map || x.GetCaravan() != null && x.GetCaravan() == p.GetCaravan())
-            select x;
+        var possiblePawns = GetAllFreeColonistsAlive.ToList();
+        foreach (var x in possiblePawns)
+        {
+            if (x.RaceProps.Humanlike && x.Faction == Faction.OfPlayer && x != p && (x.Map != null && x.Map == p.Map ||
+                    x.GetCaravan() != null && x.GetCaravan() == p.GetCaravan()))
+            {
+                yield return x;
+            }
+        }
     }
 
     public static IEnumerable<Pawn> GetKnownPeople(Pawn p1, Pawn p2)
@@ -84,7 +89,7 @@ public static class ThirdPartyManager
 
     public static bool DoesEveryoneLocallyHate(Pawn p)
     {
-        var allColonistsLocalTo = GetAllColonistsLocalTo(p);
+        var allColonistsLocalTo = GetAllColonistsLocalTo(p).ToList();
         if (!allColonistsLocalTo.Any())
         {
             return false;
@@ -92,12 +97,10 @@ public static class ThirdPartyManager
 
         foreach (var current in allColonistsLocalTo)
         {
-            if (current.relations.OpinionOf(p) <= -8 || current == p)
+            if (!(current.relations?.OpinionOf(p) <= -8) && current != p)
             {
-                continue;
+                return false;
             }
-
-            return false;
         }
 
         return true;

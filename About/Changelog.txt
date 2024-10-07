@@ -1,5 +1,8 @@
 # Changelog for RoumorHasIt
 
+1.5.3 - Fixed a collection enumeration
+
+
 1.5.2 - Updated reference to the continued version of [SYR] Trait Value
 
 

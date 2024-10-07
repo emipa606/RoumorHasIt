@@ -12,32 +12,25 @@ public class IncidentWorker_MadWithLoneliness : IncidentWorker
         if (value < 0.15)
         {
             p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Berserk);
+            return;
         }
-        else if (value < 0.45)
+
+        if (value < 0.45)
         {
             p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Wander_Psychotic);
+            return;
         }
-        else if (p.story.traits.HasTrait(TraitDefOf.DrugDesire))
-        {
-            p.mindState.mentalStateHandler.TryStartMentalState(
-                DefDatabase<MentalStateDef>.GetNamedSilentFail("Binging_DrugExtreme"));
-        }
-        else
-        {
-            p.mindState.mentalStateHandler.TryStartMentalState(MentalStateDefOf.Wander_Sad);
-        }
+
+        p.mindState.mentalStateHandler.TryStartMentalState(
+            p.story.traits.HasTrait(TraitDefOf.DrugDesire)
+                ? DefDatabase<MentalStateDef>.GetNamedSilentFail("Binging_DrugExtreme")
+                : MentalStateDefOf.Wander_Sad);
     }
 
     protected override bool TryExecuteWorker(IncidentParms parms)
     {
-        var pawns = ThirdPartyManager.GetAllFreeColonistsAlive.Where(ThirdPartyManager.DoesEveryoneLocallyHate);
-        if (!pawns.Any())
-        {
-            return false;
-        }
-
-        var pawn = pawns.RandomElement();
-
+        var possiblePawns = ThirdPartyManager.GetAllFreeColonistsAlive;
+        var pawn = possiblePawns?.InRandomOrder().FirstOrDefault(ThirdPartyManager.DoesEveryoneLocallyHate);
         if (pawn == null)
         {
             return false;
