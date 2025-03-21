@@ -1,5 +1,8 @@
 # Changelog for RoumorHasIt
 
+1.5.4 - Should work better with vehicle caravans
+
+
 1.5.3 - Fixed a collection enumeration
 
 

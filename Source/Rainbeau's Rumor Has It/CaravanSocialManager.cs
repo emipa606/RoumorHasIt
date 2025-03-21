@@ -62,10 +62,6 @@ public static class CaravanSocialManager
             recipient.skills.Learn(intDef.recipientXpGainSkill, intDef.recipientXpGainAmount);
         }
 
-        if (recipient.RaceProps.Humanlike)
-        {
-        }
-
         intDef.Worker.Interacted(initiator, recipient, list, out _, out _, out _, out _);
 
         Find.PlayLog.Add(new PlayLogEntry_Interaction(intDef, initiator, recipient, list));
@@ -78,74 +74,84 @@ public static class CaravanSocialManager
         if (p == null)
         {
             Log.Message("Pawn is null!");
+            return;
         }
-        else if (p.GetCaravan() == null)
+
+        if (p.GetCaravan() == null)
         {
+            return;
         }
-        else
+
+        if (p.interactions == null)
         {
-            if (p.interactions == null)
+            return;
+        }
+
+        if (p.RaceProps.Humanlike)
+        {
+            var list = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
+            if (list.Count == 0)
             {
+                return;
             }
 
-            if (p.RaceProps.Humanlike)
+            list.Shuffle();
+            var allDefsListForReading = DefDatabase<InteractionDef>.AllDefsListForReading;
+            // ReSharper disable once ForCanBeConvertedToForeach
+            for (var index = 0; index < list.Count; index++)
             {
-                var list = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
-                if (list.Count == 0)
+                var p2 = list[index];
+                if (p2 == null)
                 {
                     return;
                 }
 
-                list.Shuffle();
-                var allDefsListForReading = DefDatabase<InteractionDef>.AllDefsListForReading;
-                foreach (var p2 in list)
+                if (!allDefsListForReading.TryRandomElementByWeight(
+                        x => ParsedRandomInteractionWeight(x, p, p2),
+                        out var intDef))
                 {
-                    if (p2 == null)
-                    {
-                        return;
-                    }
-
-                    var p3 = p2;
-                    if (!allDefsListForReading.TryRandomElementByWeight(
-                            x => ParsedRandomInteractionWeight(x, p, p3),
-                            out var intDef))
-                    {
-                        continue;
-                    }
-
-                    if (TryInteractWith(p, p2, intDef))
-                    {
-                        return;
-                    }
-
-                    Log.Error($"{p} failed to interact with {p}");
+                    continue;
                 }
-            }
-            else if (p.RaceProps.Animal && Rand.Value < 0.05f)
-            {
-                var nuzzle = InteractionDefOf.Nuzzle;
-                var list2 = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
-                if (list2.Count == 0)
+
+                if (TryInteractWith(p, p2, intDef))
                 {
                     return;
                 }
 
-                list2.Shuffle();
-                foreach (var pawn in list2)
-                {
-                    if (pawn == null)
-                    {
-                        return;
-                    }
-
-                    if (TryInteractWith(p, pawn, nuzzle))
-                    {
-                        return;
-                    }
-
-                    Log.Error($"{p} failed to interact with {p}");
-                }
+                Log.Error($"{p} failed to interact with {p}");
             }
+
+            return;
+        }
+
+        if (!p.RaceProps.Animal || !(Rand.Value < 0.05f))
+        {
+            return;
+        }
+
+        var nuzzle = InteractionDefOf.Nuzzle;
+        var list2 = ThirdPartyManager.GetAllColonistsLocalTo(p).ToList();
+        if (list2.Count == 0)
+        {
+            return;
+        }
+
+        list2.Shuffle();
+        // ReSharper disable once ForCanBeConvertedToForeach
+        for (var index = 0; index < list2.Count; index++)
+        {
+            var pawn = list2[index];
+            if (pawn == null)
+            {
+                return;
+            }
+
+            if (TryInteractWith(p, pawn, nuzzle))
+            {
+                return;
+            }
+
+            Log.Error($"{p} failed to interact with {p}");
         }
     }
 
