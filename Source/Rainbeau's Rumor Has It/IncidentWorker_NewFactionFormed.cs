@@ -10,7 +10,7 @@ namespace Rumor_Code;
 
 public class IncidentWorker_NewFactionFormed : IncidentWorker
 {
-    private void BreakUpPawns(Pawn p1, Pawn p2)
+    private static void BreakUpPawns(Pawn p1, Pawn p2)
     {
         if (p1.relations.DirectRelationExists(PawnRelationDefOf.Spouse, p2))
         {
@@ -74,7 +74,7 @@ public class IncidentWorker_NewFactionFormed : IncidentWorker
         return result;
     }
 
-    public static Faction BuildNewFaction(Map sourceMap, bool hostile)
+    private static Faction BuildNewFaction(Map sourceMap)
     {
         var faction = new Faction
         {
@@ -151,7 +151,7 @@ public class IncidentWorker_NewFactionFormed : IncidentWorker
             return false;
         }
 
-        var faction = BuildNewFaction(map, false);
+        var faction = BuildNewFaction(map);
         if (faction == null)
         {
             return false;

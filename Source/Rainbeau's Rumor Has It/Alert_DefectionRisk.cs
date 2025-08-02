@@ -8,7 +8,7 @@ namespace Rumor_Code;
 
 public class Alert_DefectionRisk : Alert
 {
-    private IEnumerable<Pawn> DefectionRiskPawns =>
+    private static IEnumerable<Pawn> DefectionRiskPawns =>
         from p in ThirdPartyManager.GetAllFreeColonistsAlive
         where ThirdPartyManager.DoesEveryoneLocallyHate(p)
         select p;
@@ -16,38 +16,31 @@ public class Alert_DefectionRisk : Alert
     public override AlertReport GetReport()
     {
         var getAllFreeColonistsAlive = ThirdPartyManager.GetAllFreeColonistsAlive;
-        AlertReport result;
         if (!getAllFreeColonistsAlive.Any())
         {
-            result = false;
+            return false;
         }
-        else
+
+        var pawn = getAllFreeColonistsAlive.FirstOrDefault();
+
+        try
         {
-            var pawn = getAllFreeColonistsAlive.FirstOrDefault();
-
-            try
+            foreach (var current in getAllFreeColonistsAlive.ToList())
             {
-                foreach (var current in getAllFreeColonistsAlive.ToList())
+                if (!ThirdPartyManager.DoesEveryoneLocallyHate(current))
                 {
-                    if (!ThirdPartyManager.DoesEveryoneLocallyHate(current))
-                    {
-                        continue;
-                    }
-
-                    result = AlertReport.CulpritIs(current);
-                    return result;
+                    continue;
                 }
-            }
-            catch (InvalidOperationException)
-            {
-                result = AlertReport.CulpritIs(pawn);
-                return result;
-            }
 
-            result = false;
+                return AlertReport.CulpritIs(current);
+            }
+        }
+        catch (InvalidOperationException)
+        {
+            return AlertReport.CulpritIs(pawn);
         }
 
-        return result;
+        return false;
     }
 
     public override TaggedString GetExplanation()

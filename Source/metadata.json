@@ -2,8 +2,14 @@
   "Continued": true,
   "CanAdd": "0",
   "CanRemove": "2",
-  "PreviewVersion": "1.5",
+  "PreviewVersion": "1.6",
   "SocialImageSet": true,
-  "LastXmlCleaning": "2025-03-21T21:02:04.7189455+01:00",
-  "SearchTags": " social complexity"
+  "LastXmlCleaning": "2025-08-03T00:05:34.351951+02:00",
+  "SearchTags": " social complexity",
+  "Patches": true,
+  "Defs": true,
+  "Assemblies": true,
+  "LinesOfCode": 73126,
+  "LinesOfXML": 30547,
+  "CodeBaseSize": 79
 }

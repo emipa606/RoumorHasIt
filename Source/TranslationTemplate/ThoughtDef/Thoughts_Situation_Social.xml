@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: annoying voice -->
+  <AnnoyingVoiceAmeliorated.stages.annoying_voice.label>annoying voice</AnnoyingVoiceAmeliorated.stages.annoying_voice.label>
+  <!-- EN: creepy breathing -->
+  <CreepyBreathingAmeliorated.stages.creepy_breathing.label>creepy breathing</CreepyBreathingAmeliorated.stages.creepy_breathing.label>
+  <!-- EN: disfigured -->
+  <DisfiguredAmeliorated.stages.disfigured.label>disfigured</DisfiguredAmeliorated.stages.disfigured.label>
+  <!-- EN: divided colony -->
+  <DividedColony.stages.divided_colony.label>divided colony</DividedColony.stages.divided_colony.label>
+  <!-- EN: This stupid feud is damaging the colony! -->
+  <DividedColony.stages.divided_colony.description>This stupid feud is damaging the colony!</DividedColony.stages.divided_colony.description>
+  <!-- EN: good relationships -->
+  <EveryoneGetsOn.stages.good_relationships.label>good relationships</EveryoneGetsOn.stages.good_relationships.label>
+  <!-- EN: All my relationships here are positive and constructive. -->
+  <EveryoneGetsOn.stages.good_relationships.description>All my relationships here are positive and constructive.</EveryoneGetsOn.stages.good_relationships.description>
+  <!-- EN: great relationships -->
+  <EveryoneGetsOn.stages.great_relationships.label>great relationships</EveryoneGetsOn.stages.great_relationships.label>
+  <!-- EN: I couldn't imagine a better group of people to be with! -->
+  <EveryoneGetsOn.stages.great_relationships.description>I couldn't imagine a better group of people to be with!</EveryoneGetsOn.stages.great_relationships.description>
+  <!-- EN: Everyone in the caravan hates me! -->
+  <EveryoneHatesMeCaravan.stages.Everyone_in_the_caravan_hates_me.label>Everyone in the caravan hates me!</EveryoneHatesMeCaravan.stages.Everyone_in_the_caravan_hates_me.label>
+  <!-- EN: No one here likes me! -->
+  <EveryoneHatesMeCaravan.stages.Everyone_in_the_caravan_hates_me.description>No one here likes me!</EveryoneHatesMeCaravan.stages.Everyone_in_the_caravan_hates_me.description>
+  <!-- EN: I don't have a single friend in this colony. -->
+  <EveryoneHatesMeColony.stages.I_dont_have_a_single_friend_in_this_colony.label>I don't have a single friend in this colony.</EveryoneHatesMeColony.stages.I_dont_have_a_single_friend_in_this_colony.label>
+  <!-- EN: No one here likes me! -->
+  <EveryoneHatesMeColony.stages.I_dont_have_a_single_friend_in_this_colony.description>No one here likes me!</EveryoneHatesMeColony.stages.I_dont_have_a_single_friend_in_this_colony.description>
+  <!-- EN: Defecting to another faction. -->
+  <RunAwayThought.stages.Defecting_to_another_faction.label>Defecting to another faction.</RunAwayThought.stages.Defecting_to_another_faction.label>
+  <!-- EN: trustworthy vs gossip -->
+  <TrustworthyVsGossip.stages.trustworthy_vs_gossip.label>trustworthy vs gossip</TrustworthyVsGossip.stages.trustworthy_vs_gossip.label>
+  <!-- EN: ugly -->
+  <UglyAmeliorated.stages.ugly.label>ugly</UglyAmeliorated.stages.ugly.label>
+  <!-- EN: staggeringly ugly -->
+  <UglyAmeliorated.stages.staggeringly_ugly.label>staggeringly ugly</UglyAmeliorated.stages.staggeringly_ugly.label>
+</LanguageData>

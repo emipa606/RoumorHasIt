@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: angry brawl -->
+  <Brawl.label>angry brawl</Brawl.label>
+  <!-- EN: defection -->
+  <Defection.label>defection</Defection.label>
+  <!-- EN: Defection! -->
+  <Defection.letterLabel>Defection!</Defection.letterLabel>
+  <!-- EN: A colonist has become so socially isolated that they have decided to leave for another faction. -->
+  <Defection.letterText>A colonist has become so socially isolated that they have decided to leave for another faction.</Defection.letterText>
+  <!-- EN: quarrel -->
+  <FriendsQuarrel.label>quarrel</FriendsQuarrel.label>
+  <!-- EN: mad with loneliness -->
+  <MadWithLoneliness.label>mad with loneliness</MadWithLoneliness.label>
+  <!-- EN: Loneliness! -->
+  <MadWithLoneliness.letterLabel>Loneliness!</MadWithLoneliness.letterLabel>
+  <!-- EN: A colonist has had a mental break due to severe social isolation! -->
+  <MadWithLoneliness.letterText>A colonist has had a mental break due to severe social isolation!</MadWithLoneliness.letterText>
+  <!-- EN: splinter faction -->
+  <SplinterFaction.label>splinter faction</SplinterFaction.label>
+  <!-- EN: Splinter Faction -->
+  <SplinterFaction.letterLabel>Splinter Faction</SplinterFaction.letterLabel>
+  <!-- EN: A group of colonists have decided to go independent, and have split off to form a new faction. -->
+  <SplinterFaction.letterText>A group of colonists have decided to go independent, and have split off to form a new faction.</SplinterFaction.letterText>
+</LanguageData>

@@ -16,7 +16,7 @@ public static class CaravanSocialManager
         }
     }
 
-    public static void MakeCaravanInteract(Caravan c)
+    private static void MakeCaravanInteract(Caravan c)
     {
         var pawnsListForReading = c.PawnsListForReading;
         if (pawnsListForReading.Count < 3)
@@ -33,7 +33,7 @@ public static class CaravanSocialManager
         }
     }
 
-    public static bool TryInteractWith(Pawn initiator, Pawn recipient, InteractionDef intDef)
+    private static bool TryInteractWith(Pawn initiator, Pawn recipient, InteractionDef intDef)
     {
         if (initiator == recipient)
         {

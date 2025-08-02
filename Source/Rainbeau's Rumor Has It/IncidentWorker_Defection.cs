@@ -9,7 +9,7 @@ namespace Rumor_Code;
 
 public class IncidentWorker_Defection : IncidentWorker
 {
-    private void RunAway(Pawn p, Faction defection)
+    private static void RunAway(Pawn p, Faction defection)
     {
         p.SetFaction(defection);
         p.jobs.ClearQueuedJobs();

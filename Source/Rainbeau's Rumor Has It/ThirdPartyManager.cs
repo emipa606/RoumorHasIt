@@ -12,10 +12,9 @@ public static class ThirdPartyManager
     public static int iLevel = 0;
     public static bool first = true;
 
-    public static readonly Dictionary<Map, List<ICollection<Pawn>>> cliqueDict =
-        new Dictionary<Map, List<ICollection<Pawn>>>();
+    private static readonly Dictionary<Map, List<ICollection<Pawn>>> cliqueDict = new();
 
-    public static IEnumerable<Map> GetAllMapsContainingFreeSpawnedColonists =>
+    private static IEnumerable<Map> GetAllMapsContainingFreeSpawnedColonists =>
         from map in Find.Maps
         where map.mapPawns.FreeColonistsSpawnedCount > 0
         select map;
@@ -25,7 +24,7 @@ public static class ThirdPartyManager
         where car.Faction == Faction.OfPlayer
         select car;
 
-    public static IEnumerable<Pawn> GetAllColonistsInCaravans
+    private static IEnumerable<Pawn> GetAllColonistsInCaravans
     {
         get
         {
@@ -38,7 +37,7 @@ public static class ThirdPartyManager
         }
     }
 
-    public static IEnumerable<Pawn> GetAllFreeSpawnedColonistsOnMaps
+    private static IEnumerable<Pawn> GetAllFreeSpawnedColonistsOnMaps
     {
         get
         {
@@ -190,7 +189,7 @@ public static class ThirdPartyManager
             select clique).ToList();
     }
 
-    public static float GetPawnAverageRelationshipWithGroup(Pawn p, IEnumerable<Pawn> g)
+    private static float GetPawnAverageRelationshipWithGroup(Pawn p, IEnumerable<Pawn> g)
     {
         var num = 0f;
         foreach (var current in g)
@@ -201,7 +200,7 @@ public static class ThirdPartyManager
         return num / g.Count();
     }
 
-    public static float GetGroupAverageRelationshipWithGroup(IEnumerable<Pawn> g1, IEnumerable<Pawn> g2)
+    private static float GetGroupAverageRelationshipWithGroup(IEnumerable<Pawn> g1, IEnumerable<Pawn> g2)
     {
         var num = 0f;
         foreach (var current in g1)
@@ -212,7 +211,7 @@ public static class ThirdPartyManager
         return num / g1.Count();
     }
 
-    public static void BKA(ICollection<ICollection<Pawn>> cliques, ICollection<Pawn> R, ICollection<Pawn> P,
+    private static void BKA(ICollection<ICollection<Pawn>> cliques, ICollection<Pawn> R, ICollection<Pawn> P,
         ICollection<Pawn> X)
     {
         if (P.Count == 0 && X.Count == 0)

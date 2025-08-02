@@ -9,22 +9,8 @@ public class ThoughtWorker_EveryoneHatesMeCaravan : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        if (!p.Spawned)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!p.RaceProps.Humanlike)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 2)
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (!ThirdPartyManager.DoesEveryoneLocallyHate(p))
+        if (!p.Spawned || !p.RaceProps.Humanlike || ThirdPartyManager.GetAllColonistsLocalTo(p).Count() < 2 ||
+            !ThirdPartyManager.DoesEveryoneLocallyHate(p))
         {
             return ThoughtState.Inactive;
         }

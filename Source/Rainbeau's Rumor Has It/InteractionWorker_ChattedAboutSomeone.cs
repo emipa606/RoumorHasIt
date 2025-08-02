@@ -98,7 +98,7 @@ public class InteractionWorker_ChattedAboutSomeone : InteractionWorker
         }
     }
 
-    private Pawn ChooseChattedAbout(Pawn p1, Pawn p2)
+    private static Pawn ChooseChattedAbout(Pawn p1, Pawn p2)
     {
         var enumerable = ThirdPartyManager.GetKnownPeople(p1, p2);
         enumerable = enumerable.Concat(ThirdPartyManager.GetKnownPeople(p1, p2)

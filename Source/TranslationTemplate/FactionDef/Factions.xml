@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: splinter colony -->
+  <SplinterColony.label>splinter colony</SplinterColony.label>
+  <!-- EN: A colony founded by a splinter faction from yours. -->
+  <SplinterColony.description>A colony founded by a splinter faction from yours.</SplinterColony.description>
+  <!-- EN: premier -->
+  <SplinterColony.leaderTitle>premier</SplinterColony.leaderTitle>
+  <!-- EN: {0} from {1} are attacking your {2}. -->
+  <SplinterColony.messageDefendersAttacking>{0} from {1} are attacking your {2}.</SplinterColony.messageDefendersAttacking>
+  <!-- EN: colonist -->
+  <SplinterColony.pawnSingular>colonist</SplinterColony.pawnSingular>
+  <!-- EN: colonists -->
+  <SplinterColony.pawnsPlural>colonists</SplinterColony.pawnsPlural>
+</LanguageData>

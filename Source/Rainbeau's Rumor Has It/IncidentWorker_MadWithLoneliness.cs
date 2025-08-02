@@ -6,7 +6,7 @@ namespace Rumor_Code;
 
 public class IncidentWorker_MadWithLoneliness : IncidentWorker
 {
-    private void HaveEpisode(Pawn p)
+    private static void HaveEpisode(Pawn p)
     {
         var value = Rand.Value;
         if (value < 0.15)

@@ -4,18 +4,15 @@ namespace Rumor_Code;
 
 public class Watcher(Map map) : MapComponent(map)
 {
-    private int currentTick;
-
     public override void MapComponentTick()
     {
         base.MapComponentTick();
-        currentTick = Find.TickManager.TicksGame;
-        if (currentTick % 100 == 0)
+        if (map.IsHashIntervalTick(100))
         {
             CaravanSocialManager.MakeCaravansInteract();
         }
 
-        if (currentTick % 15000 == 10)
+        if (map.IsHashIntervalTick(15000))
         {
             ThirdPartyManager.FindCliques();
         }

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LanguageData>
+  <!-- EN: make peace -->
+  <Apologize.label>make peace</Apologize.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] apologized to [RECIPIENT_nameDef].</li>
+  -->
+  <Apologize.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] apologized to [RECIPIENT_nameDef].</li>
+  </Apologize.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[RECIPIENT_nameDef] was apologized to by [INITIATOR_nameDef].</li>
+  -->
+  <Apologize.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[RECIPIENT_nameDef] was apologized to by [INITIATOR_nameDef].</li>
+  </Apologize.logRulesRecipient.rulesStrings>
+  <!-- EN: chatted about someone -->
+  <ChattedAboutSomeone.label>chatted about someone</ChattedAboutSomeone.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] chatted with [RECIPIENT_nameDef] about the other colonists.</li>
+  -->
+  <ChattedAboutSomeone.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] chatted with [RECIPIENT_nameDef] about the other colonists.</li>
+  </ChattedAboutSomeone.logRulesInitiator.rulesStrings>
+  <!-- EN: culture clash -->
+  <CultureClash.label>culture clash</CultureClash.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] accidentally insulted [RECIPIENT_nameDef], </li>
+  -->
+  <CultureClash.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] accidentally insulted [RECIPIENT_nameDef], </li>
+  </CultureClash.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[RECIPIENT_nameDef] was insulted by [INITIATOR_nameDef], </li>
+  -->
+  <CultureClash.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[RECIPIENT_nameDef] was insulted by [INITIATOR_nameDef], </li>
+  </CultureClash.logRulesRecipient.rulesStrings>
+  <!-- EN: make peace -->
+  <MakePeace.label>make peace</MakePeace.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] tried to convince [RECIPIENT_nameDef] to forgive a slight.</li>
+  -->
+  <MakePeace.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] tried to convince [RECIPIENT_nameDef] to forgive a slight.</li>
+  </MakePeace.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[RECIPIENT_nameDef] was asked by [INITIATOR_nameDef] to forgive a slight.</li>
+  -->
+  <MakePeace.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[RECIPIENT_nameDef] was asked by [INITIATOR_nameDef] to forgive a slight.</li>
+  </MakePeace.logRulesRecipient.rulesStrings>
+  <!-- EN: reveal secret -->
+  <RevealSecret.label>reveal secret</RevealSecret.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] revealed another colonist's secret to [RECIPIENT_nameDef].</li>
+  -->
+  <RevealSecret.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] revealed another colonist's secret to [RECIPIENT_nameDef].</li>
+  </RevealSecret.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[RECIPIENT_nameDef] was told another colonist's secret by [INITIATOR_nameDef].</li>
+  -->
+  <RevealSecret.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[RECIPIENT_nameDef] was told another colonist's secret by [INITIATOR_nameDef].</li>
+  </RevealSecret.logRulesRecipient.rulesStrings>
+  <!-- EN: shared secret -->
+  <SharedSecret.label>shared secret</SharedSecret.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+  -->
+  <SharedSecret.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+  </SharedSecret.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+  -->
+  <SharedSecret.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] shared a secret with [RECIPIENT_nameDef].</li>
+  </SharedSecret.logRulesRecipient.rulesStrings>
+  <!-- EN: spread rumors -->
+  <SpreadRumors.label>spread rumors</SpreadRumors.label>
+  <!-- EN:
+    <li>r_logentry->[INITIATOR_nameDef] spread a rumor to [RECIPIENT_nameDef].</li>
+  -->
+  <SpreadRumors.logRulesInitiator.rulesStrings>
+    <li>r_logentry->[INITIATOR_nameDef] spread a rumor to [RECIPIENT_nameDef].</li>
+  </SpreadRumors.logRulesInitiator.rulesStrings>
+  <!-- EN:
+    <li>r_logentry->[RECIPIENT_nameDef] heard a rumor from [INITIATOR_nameDef].</li>
+  -->
+  <SpreadRumors.logRulesRecipient.rulesStrings>
+    <li>r_logentry->[RECIPIENT_nameDef] heard a rumor from [INITIATOR_nameDef].</li>
+  </SpreadRumors.logRulesRecipient.rulesStrings>
+</LanguageData>

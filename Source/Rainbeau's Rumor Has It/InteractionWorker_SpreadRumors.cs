@@ -60,7 +60,7 @@ public class InteractionWorker_SpreadRumors : InteractionWorker
         }
     }
 
-    private Pawn ChooseGossipTarget(Pawn p1, Pawn p2)
+    private static Pawn ChooseGossipTarget(Pawn p1, Pawn p2)
     {
         var enumerable = ThirdPartyManager.GetKnownPeople(p1, p2);
         enumerable = enumerable.Concat(ThirdPartyManager.GetKnownPeople(p1, p2)

@@ -8,12 +8,7 @@ public class ThoughtWorker_DividedColony : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        if (Controller.Settings.allowBrawls.Equals(true))
-        {
-            return ThoughtState.Inactive;
-        }
-
-        if (p.Map?.GetIsolatedCliques(-3) == null)
+        if (Controller.Settings.allowBrawls.Equals(true) || p.Map?.GetIsolatedCliques(-3) == null)
         {
             return ThoughtState.Inactive;
         }
