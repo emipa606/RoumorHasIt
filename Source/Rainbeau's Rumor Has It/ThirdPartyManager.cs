@@ -80,6 +80,11 @@ public static class ThirdPartyManager
 
     public static IEnumerable<Thought_Memory> GetMemoriesWithDef(Pawn p, ThoughtDef tdef)
     {
+        if (p?.needs?.mood?.thoughts?.memories == null || tdef == null)
+        {
+            return Enumerable.Empty<Thought_Memory>();
+        }
+
         var memories = p.needs.mood.thoughts.memories.Memories;
         return from x in memories
             where x.def == tdef

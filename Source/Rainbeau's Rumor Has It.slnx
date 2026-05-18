@@ -6,4 +6,22 @@
     <BuildType Name="Release" />
   </Configurations>
   <Project Path="Rainbeau's Rumor Has It/Rainbeau's Rumor Has It.csproj" />
+  <Folder Name="/XML/Languages/English/Keyed/">
+    <File Path="../Languages/English/Keyed/English.xml" />
+  </Folder>
+  <Folder Name="/XML/Patches/">
+    <File Path="../Patches/Thoughts_Situation_Social.xml" />
+  </Folder>
+  <Folder Name="/XML/1.6/Defs/">
+    <File Path="../1.6/Defs/Factions.xml" />
+    <File Path="../1.6/Defs/Incidents.xml" />
+    <File Path="../1.6/Defs/Interactions_Social.xml" />
+    <File Path="../1.6/Defs/RulePacks.xml" />
+    <File Path="../1.6/Defs/Thoughts_Memory_Social.xml" />
+    <File Path="../1.6/Defs/Thoughts_Situation_Social.xml" />
+    <File Path="../1.6/Defs/TraitDefs_Social.xml" />
+  </Folder>
+  <Folder Name="/XML/About/">
+    <File Path="../About/about.xml" />
+  </Folder>
 </Solution>

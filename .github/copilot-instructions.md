@@ -1,43 +1,67 @@
-# [RF] Rumor Has It.... (Continued) - GitHub Copilot Instructions
+# GitHub Copilot Instructions for [RF] Rumor Has It.... (Continued)
+
+Welcome to the development guidelines for the [RF] Rumor Has It.... (Continued) mod, a project aimed at bringing deeper social interactions and intrigue to RimWorld. This document is designed to guide code structuring, integration, and usage within the project. If you're using GitHub Copilot or contributing to this mod, this document will provide you with helpful instructions and suggestions.
 
 ## Mod Overview and Purpose
-"[RF] Rumor Has It.... (Continued)" is an engaging update to the original mod "Rumours and Deception" by SeveralPuffins, continuing the work of Rainbeau Flambe. This mod enriches the social dynamics in RimWorld by introducing a suite of new social interactions, traits, and events that revolve around pawns gossiping, sharing secrets, and navigating relationships within the colony. If you've ever wished your pawns had more to say about each other or enjoyed the intricacies of colony life, this mod is for you.
+
+"[RF] Rumor Has It.... (Continued)" is an update of the original mod by Rainbeau Flambe, focused on enhancing social complexity within RimWorld through new interactions, traits, and events. This mod aims to showcase gossip, secrets, and the social dynamics that emerge when pawns talk about each other. It is a revival of the pivotal concept from SeveralPuffins' earlier mod, expanding upon it with additional content and compatibility updates.
 
 ## Key Features and Systems
-### New Interactions:
-- **Chat About Other Pawns:** Enhances social interactions with discussions about other community members.
-- **Quarrel and Make Peace:** Enables arguments and reconciliations, adding depth to relationships.
-- **Spread and Reveal Secrets:** Allows pawns to share and gossip about secrets.
-- **Apologize and Culture Clash:** Provides mechanisms for resolving conflicts and understanding cultural differences.
 
-### New Traits:
-- Traits like **Compulsive Liar**, **Gossip**, and **Trustworthy** define how pawns interact based on their personalities.
+### New Interactions
+- **Chat About Other Pawns:** Pawns can express their opinions about other colony members.
+- **Quarrel:** Potential for friendly relationships to be strained through arguments.
+- **Spread Rumor:** Circulation of unverified stories among pawns.
+- **Share and Reveal Secret:** Trust dynamics and gossip within the colony.
+- **Apologize and Make Peace:** Resolution interactions for previous negative actions.
+- **Culture Clash:** Misunderstandings due to cultural differences.
 
-### New Events:
-- Events like **Defection**, **Splinter**, and **Brawl** trigger based on social dynamics, affecting colony stability and prompting new narratives.
+### New Traits
+- **Compulsive Liar:** Pawns that compulsively fabricate stories.
+- **Gossip:** Pawns obsessed with discussing other people’s affairs.
+- **Gushing, Manipulative, Peacemaker, Trustworthy:** Traits affecting social interactions and colony harmony.
 
-### Negative Trait Amelioration:
-- Certain negative traits have reduced impact when shared among pawns, promoting solidarity.
+### New Events
+- **Defection, Splinter, Brawl:** Social isolation and clique dynamics leading to colony challenges.
+
+### Trait Amelioration
+- **Amelioration of Negative Traits:** Reduced social penalty for pawns sharing traits such as Annoying Voice or Ugly.
 
 ## Coding Patterns and Conventions
-- Follow C# naming conventions: PascalCase for class names and methods, camelCase for method arguments and local variables.
-- Utilize static classes like `Watchers` and `ThirdPartyManager` for shared utilities and settings, ensuring modular and organized code.
-- Emphasize readability and maintainability by keeping methods succinct and single-purposed.
+
+- **Namespace and Class Organization:** Keep namespaces organized by functionality, e.g., `InteractionWorker`, `ThoughtWorker`, `IncidentWorker`.
+- **Descriptive Naming:** Use clear and descriptive names for methods and classes to enhance readability and maintainability.
+- **Commenting and Documentation:** Adequately comment complex logic and interaction flows.
 
 ## XML Integration
-- Integrate XML for defining traits and incidents. Utilize files like `RumorsTraitDefOf` and `RumorsThoughtDefOf` for trait and thought definitions.
-- Ensure XML files are well-structured, with appropriate schema definitions. Consistency is key for easy debugging and updates.
+
+- **Trait and Thought Definitions:** Ensure all trait and thought definitions align with XML data files. These are usually stored under `Defs/`.
+- **RulePack and Pawn Interaction:** Link XML definitions with the C# logic to ensure seamless execution in gameplay.
+- **Event Settings:** Use XML settings to allow toggling of events via the mod's Options menu.
 
 ## Harmony Patching
-- Use Harmony to patch core methods and add new functionality without directly modifying the base game code, ensuring future compatibility.
-- Ensure patch classes are organized logically and perform necessary checks to avoid conflicts with other mods. Harmony patches can be applied in methods within files like `Controller.cs`.
+
+- **Purpose:** Use Harmony to adjust existing game behavior without overwriting core files.
+- **Convention:** Follow the standard `MethodPrefix`, `MethodPostfix`, and `MethodTranspiler` to apply patches effectively.
+- **Documentation:** Document the purpose and specifics of each patch in comments.
 
 ## Suggestions for Copilot
-When using GitHub Copilot for additional development, consider the following:
-1. **New Interactions:** Prompt Copilot to help design methods for upcoming interactions by describing expected player experiences.
-2. **Conflict Resolution:** Leverage Copilot to suggest improvements or alternative approaches to handling complex event resolutions, like defection or splinter events.
-3. **Trait Balancing:** Utilize Copilot to simulate how newly added traits might affect inter-pawn relations and overall game balance.
-4. **Event Customization:** Ask Copilot to help craft new events or tweak existing settings within the framework established by `IncidentWorker` classes.
-5. **Code Documentation:** Encourage Copilot to auto-generate XML Doxygen comments for methods, detailing the intent, parameters, and expected outcomes of code segments.
 
-This document aims to streamline the modding process for developers while making enhancement and collaborative efforts straightforward and effective.
+- **Use Contextual Suggestions:** Leverage Copilot for mundane or repetitive coding tasks by feeding it specific function names and descriptions.
+- **Follow Style Guides:** Ensure Copilot adheres to the project’s coding conventions for consistency.
+- **Schema and Definitions:** Utilize Copilot to quickly draft repetitive XML schemata and new class prototypes.
+
+---
+
+By following these guidelines, developers and contributors can ensure that "[RF] Rumor Has It.... (Continued)" remains consistent, enhancing gameplay without sacrificing code quality. Feel free to explore the mod's features and extend functionality while adhering to these standards.
+
+
+This markdown document provides a structured guideline for contributors using GitHub Copilot to maintain and develop features within the mod. It outlines key aspects of the mod, coding standards, integration procedures, and makes suggestions on utilizing Copilot effectively.
+
+## Project Solution Guidelines
+- Relevant mod XML files are included as Solution Items under the solution folder named XML, these can be read and modified from within the solution.
+- Use these in-solution XML files as the primary files for reference and modification.
+- The `.github/copilot-instructions.md` file is included in the solution under the `.github` solution folder, so it should be read/modified from within the solution instead of using paths outside the solution. Update this file once only, as it and the parent-path solution reference point to the same file in this workspace.
+- When making functional changes in this mod, ensure the documented features stay in sync with implementation; use the in-solution `.github` copy as the primary file.
+- In the solution is also a project called Assembly-CSharp, containing a read-only version of the decompiled game source, for reference and debugging purposes.
+- For any new documentation, update this copilot-instructions.md file rather than creating separate documentation files.
