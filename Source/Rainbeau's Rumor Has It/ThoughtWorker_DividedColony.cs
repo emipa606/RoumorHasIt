@@ -8,16 +8,17 @@ public class ThoughtWorker_DividedColony : ThoughtWorker
 {
     protected override ThoughtState CurrentStateInternal(Pawn p)
     {
-        if (Controller.Settings.allowBrawls.Equals(true) || p.Map?.GetIsolatedCliques(-3) == null)
+        if (Controller.Settings.allowBrawls.Equals(true) || p.Faction != Faction.OfPlayer)
         {
             return ThoughtState.Inactive;
         }
 
-        if (p.Map.GetIsolatedCliques(-3).Any() && p.Faction == Faction.OfPlayer)
+        var isolatedCliques = p.Map?.GetIsolatedCliques(-3);
+        if (isolatedCliques == null)
         {
-            return ThoughtState.ActiveAtStage(0);
+            return ThoughtState.Inactive;
         }
 
-        return ThoughtState.Inactive;
+        return isolatedCliques.Any() ? ThoughtState.ActiveAtStage(0) : ThoughtState.Inactive;
     }
 }

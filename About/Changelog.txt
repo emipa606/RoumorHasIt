@@ -1,5 +1,8 @@
 # Changelog for RoumorHasIt
 
+1.6.2 - Slight optimization of thought worker
+
+
 1.6.1 - Fixed issue with pawns with no social needs
 
 
