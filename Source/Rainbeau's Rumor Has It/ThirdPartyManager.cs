@@ -82,7 +82,7 @@ public static class ThirdPartyManager
     {
         if (p?.needs?.mood?.thoughts?.memories == null || tdef == null)
         {
-            return Enumerable.Empty<Thought_Memory>();
+            return [];
         }
 
         var memories = p.needs.mood.thoughts.memories.Memories;

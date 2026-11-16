@@ -58,6 +58,7 @@ public class Alert_DefectionRisk : Alert
             }
             catch (InvalidOperationException)
             {
+                // ignored
             }
         }
         else
@@ -72,6 +73,7 @@ public class Alert_DefectionRisk : Alert
             }
             catch (InvalidOperationException)
             {
+                // ignored
             }
         }
 
